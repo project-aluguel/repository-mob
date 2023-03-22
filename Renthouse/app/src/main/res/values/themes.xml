@@ -37,4 +37,12 @@
         <item name="android:shadowRadius">20</item>
         <item name="android:shadowColor">@color/white_trans_txt</item>
     </style>
+
+    <style name="BaseTextUserPage">
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:fontFamily">@font/merriweather_sans_bold</item>
+        <item name="android:textColor">#25032A</item>
+    </style>
 </resources>
