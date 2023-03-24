@@ -5,7 +5,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="txt_insert_email">Insira seu e-mail: </string>
+    <string name="txt_user_name">Insira seu nome de usuário: </string>
     <string name="txt_insert_password">Insira sua senha: </string>
+    <string name="txt_insert_birth_date">Insira sua data de nascimento: </string>
+    <string name="txt_insert_cep">Insira seu CEP: </string>
+    <string name="txt_insert_cpf">Insira seu CPF: </string>
+    <string name="txt_insert_phone">Insira seu celular: </string>
+    <string name="txt_insert_home_phone">Insira seu telefone: </string>
+    <string name="txt_confirm_password">Confirme sua senha: </string>
     <string name="txt_back">Voltar </string>
     <string name="txt_name">Nome: </string>
     <string name="txt_email">Email: </string>
