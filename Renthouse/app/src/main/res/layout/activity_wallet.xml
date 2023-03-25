@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_wallet">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/fundo_roxo"
+        android:contentDescription="Background image"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/material_dynamic_primary40"
+           >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:gravity="center|bottom">
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:gravity="center|bottom">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Olá Creusa,&#10;você possui"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    style="@style/BaseText"
+                    >
+                </TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+
+            android:gravity="center">
+
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="75dp"
+                android:background="@color/material_dynamic_primary40"
+                style="@style/BaseEditText"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Na sua Carteira"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                style="@style/BaseText"
+                >
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:gravity="center|bottom">
+
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="60dp"
+                style="@style/BaseButton"
+                android:text="Carregar Mais"
+                android:textSize="12sp"
+                android:layout_marginRight="20dp">
+
+            </Button>
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="60dp"
+                style="@style/BaseButton"
+                android:text="Estornar"
+                android:textSize="12sp">
+
+            </Button>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

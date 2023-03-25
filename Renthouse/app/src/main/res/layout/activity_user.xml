@@ -24,7 +24,7 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@mipmap/Arrow_left"
+                android:src="@mipmap/arrow_left"
                 android:contentDescription="Background image"
                 android:layout_marginLeft="20dp"/>
             <TextView
