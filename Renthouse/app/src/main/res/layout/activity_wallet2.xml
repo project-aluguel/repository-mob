@@ -40,7 +40,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Você possui"
+                    android:text="@string/txt_wallet2_1"
                     android:textColor="@color/white"
                     android:textSize="30sp"
                     style="@style/BaseText"
@@ -55,7 +55,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Na sua carteira"
+                    android:text="@string/txt_wallet1_text2"
                     android:textSize="30sp"
                     android:textColor="@color/white"
                     style="@style/BaseText"
@@ -74,7 +74,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Quanto deseja &#10; carregar? "
+                android:text="@string/txt_wallet2_2"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 style="@style/BaseText"
@@ -94,7 +94,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="R$"
+                    android:text="@string/txt_wallet2_3"
                     android:textColor="@color/white"
                     android:textSize="30sp"
                     style="@style/BaseText"
@@ -115,7 +115,7 @@
                 android:layout_width="180dp"
                 android:layout_height="60dp"
                 style="@style/BaseButton"
-                android:text="Voltar"
+                android:text="@string/txt_button1_wallet2"
                 android:textSize="12sp"
                 android:layout_marginRight="20dp">
 
@@ -124,7 +124,7 @@
                 android:layout_width="180dp"
                 android:layout_height="60dp"
                 style="@style/BaseButton"
-                android:text="Carregar"
+                android:text="@string/txt_button2_wallet2"
                 android:textSize="12sp">
 
             </Button>

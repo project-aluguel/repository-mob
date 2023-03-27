@@ -34,7 +34,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Olá Creusa,&#10;você possui"
+                    android:text="@string/txt_wallet_name"
                     android:textColor="@color/white"
                     android:textSize="30sp"
                     style="@style/BaseText"
@@ -65,7 +65,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Na sua Carteira"
+                android:text="@string/txt_wallet1_text2"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 style="@style/BaseText"
@@ -81,7 +81,7 @@
                 android:layout_width="180dp"
                 android:layout_height="60dp"
                 style="@style/BaseButton"
-                android:text="Carregar Mais"
+                android:text="@string/txt_button1_wallet1"
                 android:textSize="12sp"
                 android:layout_marginRight="20dp">
 
@@ -90,7 +90,7 @@
                 android:layout_width="180dp"
                 android:layout_height="60dp"
                 style="@style/BaseButton"
-                android:text="Estornar"
+                android:text="@string/txt_button2_wallet1"
                 android:textSize="12sp">
 
             </Button>

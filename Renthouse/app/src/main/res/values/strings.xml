@@ -11,4 +11,13 @@
     <string name="txt_email">Email: </string>
     <string name="txt_address">Endereço: </string>
     <string name="txt_password">Senha: </string>
+    <string name="txt_wallet_name">Olá Creusa,&#10;você possui </string>
+    <string name="txt_wallet1_text2">Na sua carteira </string>
+    <string name="txt_button1_wallet1">Carregar mais</string>
+    <string name="txt_button2_wallet1">Estornar</string>
+    <string name="txt_button1_wallet2">voltar</string>
+    <string name="txt_button2_wallet2">carregar</string>
+    <string name="txt_wallet2_1">Você possui</string>
+    <string name="txt_wallet2_2">Quanto deseja &#10; carregar?</string>
+    <string name="txt_wallet2_3">R$</string>
 </resources>
