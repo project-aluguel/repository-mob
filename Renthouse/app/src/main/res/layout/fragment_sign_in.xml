@@ -19,14 +19,16 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/txt_insert_email"
                 style="@style/BaseEditText"
-                android:inputType="textEmailAddress"/>
+                android:inputType="textEmailAddress"
+                android:id="@+id/et_email"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/txt_insert_password"
                 style="@style/BaseEditText"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword"
+                android:id="@+id/et_senha"/>
 
 
             <Button
@@ -35,7 +37,9 @@
                 android:layout_height="wrap_content"
                 android:outlineSpotShadowColor="@color/white"
                 style="@style/BaseButton"
-                android:text="Entrar" />
+                android:text="Entrar"
+                android:onClick="entrar"
+                />
 
         </LinearLayout>
 
