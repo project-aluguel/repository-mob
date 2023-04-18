@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         imageView = findViewById(R.id.imageView)
 
         val bitmap = BitmapFactory.decodeResource(resources, R.mipmap.fundo_roxo)
-        val blurredBitmap = blurBitmap(this, bitmap, 25f) // 25f é o raio do efeito de desfoque
+        val blurredBitmap = blurBitmap(this, bitmap, 200f) // 25f é o raio do efeito de desfoque
 
         imageView.setImageBitmap(blurredBitmap)
     }
