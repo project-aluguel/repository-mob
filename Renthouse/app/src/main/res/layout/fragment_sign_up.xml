@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/txt_user_name"
             style="@style/BaseEditText"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:id="@+id/cdt_name"/>
 
         <EditText
@@ -40,35 +40,40 @@
             android:layout_height="wrap_content"
             android:hint="@string/txt_insert_cep"
             style="@style/BaseEditText"
-            android:inputType="textPassword"/>
+            android:inputType="text"
+            android:id="@+id/cdt_cep"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/txt_insert_cpf"
             style="@style/BaseEditText"
-            android:inputType="textPassword"/>
+            android:inputType="text"
+            android:id="@+id/cdt_cpf"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/txt_insert_phone"
             style="@style/BaseEditText"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:id="@+id/cdt_celular"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/txt_insert_password"
             style="@style/BaseEditText"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:id="@+id/cdt_senha"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/txt_confirm_password"
             style="@style/BaseEditText"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:id="@+id/cdt_confirma_senha"/>
 
 
         <Button
@@ -77,6 +82,7 @@
             android:layout_height="wrap_content"
             android:outlineSpotShadowColor="@color/white"
             style="@style/BaseButton"
+            android:onClick="cadastrar"
             android:text="Cadastrar" />
     </LinearLayout>
 

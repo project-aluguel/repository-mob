@@ -19,7 +19,17 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun cadastrarUsuario(){}
+    fun cadastrarUsuario(){
+
+        val etNomeCompleto = findViewById<EditText>(R.id.cdt_name);
+        val email = findViewById<EditText>(R.id.cdt_email)
+        val etSenha = findViewById<EditText>(R.id.cdt_senha)
+        val etConfirmaSenha = findViewById<EditText>(R.id.cdt_confirma_senha)
+        val etCelular = findViewById<EditText>(R.id.cdt_celular)
+        val etDataNascimento = findViewById<EditText>(R.id.cdt_nascimento)
+        val cpf = findViewById<EditText>(R.id.cdt_cpf)
+        val cep = findViewById<EditText>(R.id.cdt_cep)
+    }
 
     fun entrar(componente: View) {
 
