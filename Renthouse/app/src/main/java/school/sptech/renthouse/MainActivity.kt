@@ -19,16 +19,29 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun cadastrarUsuario(){
+    fun cadastrarUsuario(componente: View){
 
         val etNomeCompleto = findViewById<EditText>(R.id.cdt_name);
-        val email = findViewById<EditText>(R.id.cdt_email)
-        val etSenha = findViewById<EditText>(R.id.cdt_senha)
+        val etEmailCdt = findViewById<EditText>(R.id.cdt_email)
+        val etSenhaCdt = findViewById<EditText>(R.id.cdt_senha)
         val etConfirmaSenha = findViewById<EditText>(R.id.cdt_confirma_senha)
         val etCelular = findViewById<EditText>(R.id.cdt_celular)
         val etDataNascimento = findViewById<EditText>(R.id.cdt_nascimento)
-        val cpf = findViewById<EditText>(R.id.cdt_cpf)
-        val cep = findViewById<EditText>(R.id.cdt_cep)
+        val etCpf = findViewById<EditText>(R.id.cdt_cpf)
+        val etCep = findViewById<EditText>(R.id.cdt_cep)
+
+        val activityBuyItem = Intent(applicationContext, activity_buyItem::class.java)
+
+        activityBuyItem.putExtra("nome",etNomeCompleto.text.toString())
+        activityBuyItem.putExtra("email",etEmailCdt.text.toString())
+        activityBuyItem.putExtra("senha",etSenhaCdt.text.toString())
+        activityBuyItem.putExtra("confirmar_senha",etConfirmaSenha.text.toString())
+        activityBuyItem.putExtra("celular",etCelular.text.toString())
+        activityBuyItem.putExtra("data_nascimento",etDataNascimento.text.toString())
+        activityBuyItem.putExtra("cpf",etCpf.text.toString())
+        activityBuyItem.putExtra("cep",etCep.text.toString())
+
+
     }
 
     fun entrar(componente: View) {
