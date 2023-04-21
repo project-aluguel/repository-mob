@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+d<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -106,33 +106,112 @@
                 android:layout_marginRight="10dp"
                 android:outlineSpotShadowColor="@color/white"
                 style="@style/BaseButton"
-                android:text="Entrar" />
+                android:text="Games" />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:outlineSpotShadowColor="@color/white"
                 style="@style/BaseButton"
-                android:text="Entrar" />
+                android:text="Livros" />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:outlineSpotShadowColor="@color/white"
                 style="@style/BaseButton"
-                android:text="Entrar" />
+                android:text="Música" />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:outlineSpotShadowColor="@color/white"
                 style="@style/BaseButton"
-                android:text="Entrar" />
+                android:text="Esportes" />
         </LinearLayout>
     </HorizontalScrollView>
 
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@color/white">
+        <ImageView
+            android:layout_width="240dp"
+            android:layout_height="110dp"
+            android:layout_margin="5dp"
+            android:src="@mipmap/guitarra"/>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROMOÇÃO!"
+                android:textColor="#f0f"
+                android:textSize="17sp"
+                style="@style/BaseText"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alugue juntos e tenha um desconto de"
+                android:textColor="#000"
+                android:textSize="14sp"
+                style="@style/BaseText"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15%"
+                android:textColor="#f0f"
+                android:textSize="17sp"
+                style="@style/BaseText"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp">
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/BaseText"
+            android:gravity="start"
+            android:textColor="@color/white"
+            android:text="Baseado nas suas últimas visitas"
+    </LinearLayout>
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content">
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_marginRight="30dp"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_poster"/>
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_marginRight="30dp"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_poster"/>
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_marginRight="30dp"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_poster"/>
+        </LinearLayout>
+    </HorizontalScrollView>
 
-
+    
 
     </LinearLayout>
 
