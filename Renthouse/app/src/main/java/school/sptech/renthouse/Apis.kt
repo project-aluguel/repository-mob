@@ -6,7 +6,7 @@ import retrofit2.create
 
 object Apis {
 
-    var BASE_URL = "http://192.168.0.32:8080/usuarios/"
+    var BASE_URL = "http://10.18.7.9:8080/usuarios/"
 
     fun getApiUsuarios(): ApiUsuarios {
         val retrofit = Retrofit.Builder()

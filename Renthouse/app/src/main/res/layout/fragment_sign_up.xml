@@ -16,21 +16,24 @@
             android:layout_height="wrap_content"
             android:hint="@string/txt_insert_email"
             style="@style/BaseEditText"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress"
+            android:id="@+id/cdt_email"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/txt_user_name"
             style="@style/BaseEditText"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:id="@+id/cdt_name"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/txt_insert_birth_date"
             style="@style/BaseEditText"
-            android:inputType="textPassword"/>
+            android:inputType="datetime"
+            android:id="@+id/cdt_nascimento"/>
 
         <EditText
             android:layout_width="match_parent"

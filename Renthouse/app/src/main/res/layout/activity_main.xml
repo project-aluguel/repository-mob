@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/fragment_id"
                 android:name="school.sptech.renthouse.SignIn"
-                tools:layout="@layout/fragment_sing_up"/>
+                tools:layout="@layout/fragment_sign_in"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

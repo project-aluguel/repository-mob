@@ -10,4 +10,7 @@ interface ApiUsuarios {
 
     @POST("login")
     fun login(@Body body: LoginRequest): Call<Usuario>
+
+    @POST()
+    fun criarUsuario(@Body body: UsuarioRequest): Call<Usuario>
 }
