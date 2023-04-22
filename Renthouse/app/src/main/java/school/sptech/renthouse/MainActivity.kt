@@ -2,22 +2,30 @@ package school.sptech.renthouse
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Esconde a barra de ação
+        supportActionBar?.hide()
+
         setContentView(R.layout.activity_main)
 
 
     }
 
+    fun goToSignupActivity(view: View?) {
+        val intent = Intent(this, MainActivityCadastro::class.java)
+        startActivity(intent)
+    }
 
     fun cadastrarUsuario(componente: View){
 

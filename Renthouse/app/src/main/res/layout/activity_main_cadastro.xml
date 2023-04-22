@@ -10,8 +10,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".MainActivityCadastro">
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -38,23 +37,26 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp">
                 <TextView
+                    android:id="@+id/signup_textview"
+                    android:onClick="goToSigninActivity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/txt_in"
                     style="@style/BaseText"
-                    android:shadowColor="@color/white"
-                    android:shadowRadius="25"/>
+
+                    />
                 <TextView
-                    android:id="@+id/signup_textview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/txt_up"
                     style="@style/BaseText"
-                    android:onClick="goToSignupActivity"/>
+                    android:shadowRadius="25"
+                    android:shadowColor="@color/white"
+                    />
             </LinearLayout>
             <LinearLayout
-                android:layout_marginTop="50dp"
                 android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginRight="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -71,7 +73,55 @@
                         android:hint="@string/txt_insert_email"
                         style="@style/BaseEditText"
                         android:inputType="textEmailAddress"
-                        android:id="@+id/et_email"/>
+                        android:id="@+id/cdt_email"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/txt_user_name"
+                        style="@style/BaseEditText"
+                        android:inputType="text"
+                        android:id="@+id/cdt_name"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/txt_insert_birth_date"
+                        style="@style/BaseEditText"
+                        android:inputType="date"
+                        android:id="@+id/cdt_nascimento"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/txt_insert_cep"
+                        style="@style/BaseEditText"
+                        android:inputType="number"
+                        android:id="@+id/cdt_cep"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/txt_insert_number_residencial"
+                        style="@style/BaseEditText"
+                        android:inputType="number"
+                        android:id="@+id/cdt_numero_residencia"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/txt_insert_cpf"
+                        style="@style/BaseEditText"
+                        android:inputType="number"
+                        android:id="@+id/cdt_cpf"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/txt_insert_phone"
+                        style="@style/BaseEditText"
+                        android:inputType="phone"
+                        android:id="@+id/cdt_celular"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -79,22 +129,29 @@
                         android:hint="@string/txt_insert_password"
                         style="@style/BaseEditText"
                         android:inputType="textPassword"
-                        android:id="@+id/et_senha"/>
+                        android:id="@+id/cdt_senha"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/txt_confirm_password"
+                        style="@style/BaseEditText"
+                        android:inputType="textPassword"
+                        android:id="@+id/cdt_confirma_senha"/>
 
 
                     <Button
-                        android:layout_marginTop="50dp"
+                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:outlineSpotShadowColor="@color/white"
                         style="@style/BaseButton"
-                        android:text="Entrar"
-                        android:onClick="entrar"
-                        />
-
+                        android:onClick="cadastrar"
+                        android:text="Cadastrar" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

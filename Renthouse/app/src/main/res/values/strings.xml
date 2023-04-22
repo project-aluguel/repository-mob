@@ -9,6 +9,7 @@
     <string name="txt_insert_password">Insira sua senha: </string>
     <string name="txt_insert_birth_date">Insira sua data de nascimento: </string>
     <string name="txt_insert_cep">Insira seu CEP: </string>
+    <string name="txt_insert_number_residencial">Insira seu Numero residencial: </string>
     <string name="txt_insert_cpf">Insira seu CPF: </string>
     <string name="txt_insert_phone">Insira seu celular: </string>
     <string name="txt_insert_home_phone">Insira seu telefone: </string>
