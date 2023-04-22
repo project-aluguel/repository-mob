@@ -34,4 +34,5 @@
     <string name="txt_change_days">Escolha o intervalo de dias que você quer alugar o item</string>
     <string name="txt_name_creusa">Creusa Silveira</string>
     <string name="txt_delivery">Entrega</string>
+    <string name="txt_error_message">Verifique se as informações estão corretas</string>
 </resources>

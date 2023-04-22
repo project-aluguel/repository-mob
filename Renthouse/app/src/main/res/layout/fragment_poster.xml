@@ -17,7 +17,7 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="150dp"
-            android:src="@mipmap/produtoSpiderMan"/>
+            android:src="@mipmap/produto_spiderman"/>
 
         <LinearLayout
             android:layout_marginTop="5dp"
