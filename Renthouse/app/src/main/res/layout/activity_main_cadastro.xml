@@ -146,7 +146,7 @@
                         android:layout_height="wrap_content"
                         android:outlineSpotShadowColor="@color/white"
                         style="@style/BaseButton"
-                        android:onClick="cadastrar"
+                        android:onClick="cadastrarUsuario"
                         android:text="Cadastrar" />
                 </LinearLayout>
             </LinearLayout>
