@@ -2,13 +2,18 @@ package school.sptech.renthouse
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
-import androidx.appcompat.app.AppCompatActivity
+import androidx.annotation.RequiresApi
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,27 +32,39 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun cadastrarUsuario(componente: View){
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun cadastrar(componente: View){
 
         val etNomeCompleto = findViewById<EditText>(R.id.cdt_name);
         val etEmailCdt = findViewById<EditText>(R.id.cdt_email)
         val etSenhaCdt = findViewById<EditText>(R.id.cdt_senha)
         val etConfirmaSenha = findViewById<EditText>(R.id.cdt_confirma_senha)
-        val etCelular = findViewById<EditText>(R.id.cdt_celular)
+        val etTelefone = findViewById<EditText>(R.id.cdt_telefone)
+
+        val nomeCompleto = etNomeCompleto.text.toString()
+        val email_cadastro = etEmailCdt.text.toString()
+        val senha_cadastro = etSenhaCdt.text.toString()
+        val confirma_senha = etConfirmaSenha.text.toString()
+        val telefone = etTelefone.text.toString()
+
+
         val etDataNascimento = findViewById<EditText>(R.id.cdt_nascimento)
-        val etCpf = findViewById<EditText>(R.id.cdt_cpf)
-        val etCep = findViewById<EditText>(R.id.cdt_cep)
+        val dataNascimentoString = etDataNascimento.text.toString()
+        val formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd")
+        val dataNascimento = LocalDate.parse(dataNascimentoString, formatter)
+
+
+        // agora você pode usar a data formatada como quiser
+        val dataNascimentoFormatada = dataNascimento.format(formatter)
+
+        val dataFinal = dataNascimentoFormatada;
+
 
         val activityBuyItem = Intent(applicationContext, activity_buyItem::class.java)
 
-        activityBuyItem.putExtra("nome",etNomeCompleto.text.toString())
-        activityBuyItem.putExtra("email",etEmailCdt.text.toString())
-        activityBuyItem.putExtra("senha",etSenhaCdt.text.toString())
-        activityBuyItem.putExtra("confirmar_senha",etConfirmaSenha.text.toString())
-        activityBuyItem.putExtra("celular",etCelular.text.toString())
-        activityBuyItem.putExtra("data_nascimento",etDataNascimento.text.toString())
-        activityBuyItem.putExtra("cpf",etCpf.text.toString())
-        activityBuyItem.putExtra("cep",etCep.text.toString())
+
+
+
 
 
     }
