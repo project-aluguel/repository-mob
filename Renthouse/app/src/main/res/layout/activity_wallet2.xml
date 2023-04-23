@@ -48,10 +48,11 @@
                             style="@style/BaseText"
                             >
                         </TextView>
-                        <EditText
+                        <TextView
                             android:layout_width="125dp"
                             android:layout_height="50dp"
                             android:background="@color/white"
+                            android:id="@+id/valorCarteira"
                             style="@style/BaseEditText"/>
                     </LinearLayout>
                     <TextView
@@ -105,7 +106,8 @@
                     <EditText
                         android:layout_width="160dp"
                         android:layout_height="50dp"
-                        android:background="@color/white"/>
+                        android:background="@color/white"
+                        android:id="@+id/recarga"/>
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout

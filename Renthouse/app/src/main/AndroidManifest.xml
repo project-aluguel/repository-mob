@@ -36,13 +36,13 @@
             android:name=".activity_wallet2"
             android:exported="false" />
         <activity
-            android:name=".activity_wallet"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".UserActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity_wallet"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

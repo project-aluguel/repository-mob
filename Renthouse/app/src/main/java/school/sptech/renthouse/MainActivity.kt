@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-
     }
 
     fun goToSignupActivity(view: View?) {
@@ -65,7 +64,6 @@ class MainActivity : AppCompatActivity() {
         activityBuyItem.putExtra("senha",etSenha.text.toString())
 
         verificarAutenticacao(componente.context, activityBuyItem)
-
     }
 
     fun verificarAutenticacao(context: Context, activityBuyItem: Intent) {
@@ -101,10 +99,8 @@ class MainActivity : AppCompatActivity() {
                     println(" -----------------------------------------" + t.message)
                     t.printStackTrace()
                 }
-
             },
             // quando NÃO houver comunicação com a API
         )
     }
-
 }
