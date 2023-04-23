@@ -8,9 +8,9 @@ import retrofit2.http.Query
 
 interface ApiUsuarios {
 
-    @POST("login")
+    @POST("/usuarios/login")
     fun login(@Body body: LoginRequest): Call<Usuario>
 
-    @POST()
-    fun criarUsuario(@Body body: UsuarioRequest): Call<Usuario>
+    @POST("/usuarios")
+    fun criarUsuario(@Body body: UsuarioRequest): Call<String>
 }

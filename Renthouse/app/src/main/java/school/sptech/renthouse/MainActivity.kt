@@ -32,42 +32,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun cadastrar(componente: View){
 
-        val etNomeCompleto = findViewById<EditText>(R.id.cdt_name);
-        val etEmailCdt = findViewById<EditText>(R.id.cdt_email)
-        val etSenhaCdt = findViewById<EditText>(R.id.cdt_senha)
-        val etConfirmaSenha = findViewById<EditText>(R.id.cdt_confirma_senha)
-        val etTelefone = findViewById<EditText>(R.id.cdt_telefone)
-
-        val nomeCompleto = etNomeCompleto.text.toString()
-        val email_cadastro = etEmailCdt.text.toString()
-        val senha_cadastro = etSenhaCdt.text.toString()
-        val confirma_senha = etConfirmaSenha.text.toString()
-        val telefone = etTelefone.text.toString()
-
-
-        val etDataNascimento = findViewById<EditText>(R.id.cdt_nascimento)
-        val dataNascimentoString = etDataNascimento.text.toString()
-        val formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd")
-        val dataNascimento = LocalDate.parse(dataNascimentoString, formatter)
-
-
-        // agora você pode usar a data formatada como quiser
-        val dataNascimentoFormatada = dataNascimento.format(formatter)
-
-        val dataFinal = dataNascimentoFormatada;
-
-
-        val activityBuyItem = Intent(applicationContext, activity_buyItem::class.java)
-
-
-
-
-
-
-    }
 
     fun entrar(componente: View) {
 
