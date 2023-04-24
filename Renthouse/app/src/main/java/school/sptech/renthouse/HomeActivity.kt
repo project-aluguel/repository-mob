@@ -8,4 +8,16 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
     }
+    fun getAllItens() {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        val myFragment = PosterFragment()
+        fragmentTransaction.add(R.id.fragment_container_home, myFragment)
+        fragmentTransaction.commit()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        getAllItens()
+    }
 }
