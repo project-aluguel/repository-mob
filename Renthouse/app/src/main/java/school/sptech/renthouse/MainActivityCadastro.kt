@@ -1,5 +1,6 @@
 package school.sptech.renthouse
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Build
@@ -24,7 +25,7 @@ class MainActivityCadastro : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.O)
    public fun goToSigninActivity(componente: View) {
-        val mainActivity = Intent(this, MainActivity::class.java)
+             val mainActivity = Intent(this, MainActivity::class.java)
             startActivity(mainActivity)
     }
 
