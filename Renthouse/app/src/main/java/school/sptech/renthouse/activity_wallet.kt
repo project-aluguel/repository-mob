@@ -2,6 +2,10 @@ package school.sptech.renthouse
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class activity_wallet : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,10 +19,10 @@ class activity_wallet : AppCompatActivity() {
     fun buscaSaldo(id:String){
 
         val valorCarteira = findViewById<TextView>(R.id.valorCarteira)
+        val idUsuarioRecebido = intent.getStringExtra("idUser")
+        val call = Apis.apiCarteira().buscaCarteira(idUsuarioRecebido.toString())
 
-        val call = Apis.apiCarteira().buscaCarteira(id)
-
-        call.enqueue(object : Callback<CarteiraUsuario>{
+        call.enqueue(object : Callback<CarteiraUsuario> {
             override fun onResponse(
                 call: Call<CarteiraUsuario>,
                 response: Response<CarteiraUsuario>

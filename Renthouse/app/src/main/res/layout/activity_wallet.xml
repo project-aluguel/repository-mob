@@ -51,11 +51,12 @@
 
             android:gravity="center">
 
-            <EditText
+            <TextView
                 android:layout_width="200dp"
                 android:layout_height="75dp"
                 android:background="@color/material_dynamic_primary40"
-                style="@style/BaseEditText"/>
+                style="@style/BaseEditText"
+                android:id="@+id/valorCarteira"/>
 
         </LinearLayout>
 

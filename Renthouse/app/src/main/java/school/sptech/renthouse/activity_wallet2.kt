@@ -21,11 +21,11 @@ class activity_wallet2 : AppCompatActivity() {
 
     var idCarteira = ""
 
-    fun buscaSaldo(idUsuario:String){
+    fun buscaSaldo(id:String){
 
         val valorCarteira = findViewById<TextView>(R.id.valorCarteira)
-
-        val call = Apis.apiCarteira().buscaCarteira(idUsuario)
+        val idUsuarioRecebido = intent.getStringExtra("idUser")
+        val call = Apis.apiCarteira().buscaCarteira(idUsuarioRecebido.toString())
 
         call.enqueue(object : Callback<CarteiraUsuario> {
             override fun onResponse(

@@ -80,7 +80,10 @@ if(senha_cadastro == confirma_senha)
 
             override fun onResponse(call: Call<String>, response: Response<String>) {
                 if (response.isSuccessful) {
+                    val activityWallet = Intent(applicationContext, activity_wallet::class.java)
                     val idUser = response.body()
+                    activityWallet.putExtra("idUser", idUser.toString())
+
                     context.startActivity(mainActivity)
                 } else {
                     println("--------------------------------------------------- Deu ruuim")
