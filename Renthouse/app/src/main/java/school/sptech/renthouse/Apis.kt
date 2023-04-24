@@ -6,7 +6,7 @@ import retrofit2.create
 
 object Apis {
 
-    var BASE_URL = "http://10.0.2.2:8080"
+    var BASE_URL = "http://192.168.0.15:8080"
     var URL_VIACEP = "https://viacep.com.br/ws/"
 
     fun getApiUsuarios(): ApiUsuarios {
