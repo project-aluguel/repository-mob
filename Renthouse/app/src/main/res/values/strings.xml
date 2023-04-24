@@ -35,4 +35,8 @@
     <string name="txt_name_creusa">Creusa Silveira</string>
     <string name="txt_delivery">Entrega</string>
     <string name="txt_error_message">Verifique se as informações estão corretas</string>
+    <string name="txt_my_profile">Meu Perfil</string>
+    <string name="txt_favorite">Favoritos</string>
+    <string name="txt_wallet">Carteira</string>
+    <string name="txt_bag">Sacola</string>
 </resources>
