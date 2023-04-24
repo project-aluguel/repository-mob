@@ -127,7 +127,8 @@
                     android:layout_height="60dp"
                     style="@style/BaseButton"
                     android:text="@string/txt_button2_wallet2"
-                    android:textSize="12sp">
+                    android:textSize="12sp"
+                    android:onClick="recargaCarteira">
 
                 </Button>
             </LinearLayout>
