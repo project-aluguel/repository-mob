@@ -18,9 +18,22 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@color/material_dynamic_primary40"
-           >
+            android:layout_height="70dp"
+            android:gravity="center_vertical"
+            >
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/Arrow_left"
+                android:contentDescription="Background image"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@string/txt_back'
+                android:textColor="@color/white"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -52,11 +65,15 @@
             android:gravity="center">
 
             <TextView
-                android:layout_width="200dp"
-                android:layout_height="75dp"
-                android:background="@color/material_dynamic_primary40"
-                style="@style/BaseEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:textSize="28sp"
+                android:textColor="@color/white"
+                android:text="129 reais"
+                android:layout_weight="0"
+                style="@style/BaseText"
                 android:id="@+id/valorCarteira"/>
+
 
         </LinearLayout>
 
