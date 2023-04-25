@@ -1,7 +1,9 @@
 package school.sptech.renthouse
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import retrofit2.Call
 import retrofit2.Callback
@@ -39,5 +41,15 @@ class activity_wallet : AppCompatActivity() {
                 t.printStackTrace()
             }
         })
+    }
+
+    fun goToWallet2(view: View?) {
+        val intent = Intent(this, activity_wallet2::class.java)
+        startActivity(intent)
+    }
+
+    fun goToWallet2(view: View?) {
+        val intent = Intent(this, activity_wallet2::class.java)
+        startActivity(intent)
     }
 }

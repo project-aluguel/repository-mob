@@ -1,7 +1,9 @@
 package school.sptech.renthouse
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
@@ -74,5 +76,13 @@ class activity_wallet2 : AppCompatActivity() {
 
         })
 
+    }
+    fun goToPerfil(view: View?) {
+        val intent = Intent(this, UserActivity::class.java)
+        startActivity(intent)
+    }
+    fun goToPerfil(view: View?) {
+        val intent = Intent(this, UserActivity::class.java)
+        startActivity(intent)
     }
 }
