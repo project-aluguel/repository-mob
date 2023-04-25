@@ -17,6 +17,7 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="150dp"
+            android:id="@+id/imagem_poster"
             android:src="@mipmap/produto_spiderman"/>
 
         <LinearLayout
@@ -43,6 +44,7 @@
                 android:text="R$50,00 dia"
                 android:textSize="18sp"
                 android:textFontWeight="0"
+                android:id="@+id/valor"
                 android:textColor="#F605F2"
                 android:gravity="start"
                 style="@style/BaseText"/>
