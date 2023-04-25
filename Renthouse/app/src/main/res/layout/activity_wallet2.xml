@@ -53,6 +53,7 @@
                             android:layout_height="50dp"
                             android:background="@color/white"
                             android:id="@+id/valorCarteira"
+                            android:textSize="20sp"
                             style="@style/BaseEditText"/>
                     </LinearLayout>
                     <TextView
@@ -107,6 +108,7 @@
                         android:layout_width="160dp"
                         android:layout_height="50dp"
                         android:background="@color/white"
+                        android:textSize="25sp"
                         android:id="@+id/recarga"/>
                 </LinearLayout>
             </LinearLayout>

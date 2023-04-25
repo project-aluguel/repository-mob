@@ -55,6 +55,7 @@
                 android:layout_height="75dp"
                 android:background="@color/material_dynamic_primary40"
                 style="@style/BaseEditText"
+                android:textSize="30sp"
                 android:id="@+id/valorCarteira"/>
 
         </LinearLayout>
