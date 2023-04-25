@@ -65,7 +65,6 @@ class MainActivity : AppCompatActivity() {
         activityBuyItem.putExtra("senha",etSenha.text.toString())
 
         verificarAutenticacao(componente.context, activityBuyItem)
-
     }
 
     fun verificarAutenticacao(context: Context, activityBuyItem: Intent) {
@@ -91,7 +90,11 @@ class MainActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<Usuario>, response: Response<Usuario>) {
                     if (response.isSuccessful) { // se o status é 2xx
                         print("------------------------------------------- FUNCIONOU")
+                        val userId = response.body()?.id
+                        val activityHome = Intent(applicationContext, HomeActivity::class.java)
+                        activityHome.putExtra("id", userId.toString())
                         context.startActivity(activityBuyItem)
+
                     } else {
                         println("--------------------------------------------------- Deu ruuim")
                     }
