@@ -17,10 +17,10 @@
 
 
     <style name="BaseButton">
-        <item name="android:textSize">20sp</item>
-        <item name="android:paddingLeft">30sp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:paddingLeft">10sp</item>
         <item name="textAllCaps">false</item>
-        <item name="android:paddingRight">30sp</item>
+        <item name="android:paddingRight">10sp</item>
         <item name="android:color">@color/white</item>
         <item name="android:background">@drawable/button_border</item>
         <item name="android:backgroundTint">@color/white</item>
@@ -50,7 +50,6 @@
     </style>
 
     <style name="BaseEditText">
-        <item name="android:fontFamily">@font/merriweather_sans_light</item>
         <item name="android:backgroundTint">@color/white_trans_txt</item>
         <item name="android:textColorHint">@color/white</item>
         <item name="android:shadowRadius">20</item>

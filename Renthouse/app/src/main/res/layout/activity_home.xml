@@ -195,11 +195,12 @@
             </LinearLayout>
             <HorizontalScrollView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp">
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/fragment_container_home"
                     android:orientation="horizontal">
@@ -219,11 +220,68 @@
                         android:layout_marginRight="30dp"
                         android:layout_height="wrap_content"
                         tools:layout="@layout/fragment_poster"/>
-
+                    <fragment
+                        android:layout_width="wrap_content"
+                        android:layout_marginRight="30dp"
+                        android:layout_height="wrap_content"
+                        tools:layout="@layout/fragment_poster"/>
                 </LinearLayout>
             </HorizontalScrollView>
 
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    style="@style/BaseText"
+                    android:gravity="start"
+                    android:textColor="@color/white"
+                    android:text="Baseado nas suas últimas visitas"/>
+            </LinearLayout>
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp">
+                    <Button
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        style="@style/BaseButton"
+                        android:padding="25dp"
+                        android:layout_marginRight="20dp"
+                        android:text="Livros"/>
+                    <Button
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        style="@style/BaseButton"
+                        android:padding="25dp"
+                        android:layout_marginRight="20dp"
+                        android:text="Jogos"/>
+                    <Button
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        style="@style/BaseButton"
+                        android:padding="25dp"
+                        android:layout_marginRight="20dp"
+                        android:text="Músicas"/>
+                    <Button
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        style="@style/BaseButton"
+                        android:padding="25dp"
+                        android:layout_marginRight="20dp"
+                        android:text="Esportes"/>
+                </LinearLayout>
+            </HorizontalScrollView>
 
         </LinearLayout>
     </ScrollView>
