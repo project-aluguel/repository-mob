@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import retrofit2.Call
 import retrofit2.Callback
@@ -41,23 +42,25 @@ class MainActivity : AppCompatActivity() {
         val etLogin = findViewById<EditText>(R.id.et_email)
         val etSenha = findViewById<EditText>(R.id.et_senha)
 
-        val activityBuyItem = Intent(applicationContext, activity_buyItem::class.java)
+        val homeActivity = Intent(applicationContext, HomeActivity::class.java)
 
-        activityBuyItem.putExtra("email",etLogin.text.toString())
-        activityBuyItem.putExtra("senha",etSenha.text.toString())
+        homeActivity.putExtra("email",etLogin.text.toString())
+        homeActivity.putExtra("senha",etSenha.text.toString())
 
-        verificarAutenticacao(componente.context, activityBuyItem)
+        verificarAutenticacao(componente.context, homeActivity)
 
     }
 
-    fun verificarAutenticacao(context: Context, activityBuyItem: Intent) {
+    fun verificarAutenticacao(context: Context, homeActivity: Intent) {
         /*
         Aqui estamos solicitando os dados enviados pela Activity anterior
          */
-        val emailRecebido = activityBuyItem.getStringExtra("email")
-        val senhaRecebida = activityBuyItem.getStringExtra("senha")
+        val emailRecebido = homeActivity.getStringExtra("email")
+        val senhaRecebida = homeActivity.getStringExtra("senha")
 
         // recuperando a TextView da tela
+
+        val tvAutenticacao = findViewById<TextView>(R.id.text_error)
 
         val request = LoginRequest(emailRecebido!!,senhaRecebida!!);
         // instância do cliente da API
@@ -73,9 +76,10 @@ class MainActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<Usuario>, response: Response<Usuario>) {
                     if (response.isSuccessful) { // se o status é 2xx
                         print("------------------------------------------- FUNCIONOU")
-                        context.startActivity(activityBuyItem)
+                        context.startActivity(homeActivity)
                     } else {
                         println("--------------------------------------------------- Deu ruuim")
+                        tvAutenticacao.text = "Login e/ou senha inválidos"
                     }
                 }
 

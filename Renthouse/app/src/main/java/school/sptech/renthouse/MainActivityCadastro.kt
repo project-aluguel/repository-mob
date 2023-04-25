@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import retrofit2.Call
 import retrofit2.Callback
@@ -63,6 +64,7 @@ class MainActivityCadastro : AppCompatActivity() {
         val cep = etCep.text.toString()
         val telefone = etTelefone.text.toString()
 
+        val tvAutenticacaoCadastro = findViewById<TextView>(R.id.text_error_cadastro)
 
 
 
@@ -70,9 +72,8 @@ class MainActivityCadastro : AppCompatActivity() {
             nomeCompleto!!,dataNascimentoFormatada!!,cpf!!,telefone!!)
 
         val apiUser = Apis.getApiUsuarios();
-        val apiViaCep = Apis.getApiViaCep()
-
         val criarUserPost = apiUser.criarUsuario(requestUser)
+
 if(senha_cadastro == confirma_senha)
 {
     criarUserPost.enqueue(
@@ -81,12 +82,36 @@ if(senha_cadastro == confirma_senha)
             override fun onResponse(call: Call<String>, response: Response<String>) {
                 if (response.isSuccessful) {
                     val activityWallet = Intent(applicationContext, activity_wallet::class.java)
-                    val idUser = response.body()
-                    activityWallet.putExtra("idUser", idUser.toString())
+                    val idUser = response.body().toString()
+                    activityWallet.putExtra("idUser", idUser)
+
+                    val enderecoMock =
+                        EnderecoRequest(cep, "Rua dos Testes",
+                            "Casa 1", "Testeville", "Testalândia",
+                            "TS", "12345", "45678", "11",
+                            "7890", "123", idUser)
+
+                    val salvarEndereco = apiUser.salvarEndereco(enderecoMock)
+
+                    salvarEndereco.enqueue(object : Callback<Endereco>{
+                        override fun onResponse(
+                            call: Call<Endereco>,
+                            response: Response<Endereco>
+                        ) {
+                            val dadosEndereco = response.body()
+                            println("Deu booooooooooooooooooom, " + dadosEndereco)
+
+                        }
+
+                        override fun onFailure(call: Call<Endereco>, t: Throwable) {
+                            println("EROOOOOOOOOR -----------------------, "+ t.message)
+                        }
+
+                    })
 
                     context.startActivity(mainActivity)
                 } else {
-                    println("--------------------------------------------------- Deu ruuim")
+                    tvAutenticacaoCadastro.text = "Verifique se as informações foram preenchidas corretamente"
                 }
             }
 
@@ -99,7 +124,10 @@ if(senha_cadastro == confirma_senha)
 }
         else{
             println("deu ruim")
+            tvAutenticacaoCadastro.text = "Verifique se as informações foram preenchidas corretamente"
         }
+
+
 
 
 

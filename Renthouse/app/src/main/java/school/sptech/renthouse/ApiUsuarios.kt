@@ -13,4 +13,8 @@ interface ApiUsuarios {
 
     @POST("/usuarios")
     fun criarUsuario(@Body body: UsuarioRequest): Call<String>
+
+    @POST("/enderecos")
+    fun salvarEndereco(@Body body: EnderecoRequest): Call<Endereco>
+
 }
