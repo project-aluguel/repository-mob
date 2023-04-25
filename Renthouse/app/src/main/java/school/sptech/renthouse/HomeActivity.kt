@@ -13,33 +13,22 @@ class HomeActivity() : AppCompatActivity() {
         supportActionBar?.hide()
         setContentView(R.layout.activity_home)
 
-
-
-        getAllItens()
     }
-    fun getAllItens() {
-        val intent = intent
-        val id = intent.getStringExtra("id")
-
-        val apiItens = Apis.getApiItens()
-        val chamadaPOST = apiItens.getItens(id!!);
-        val itens: List<Call<ItemRequest>> = listOf(chamadaPOST);
-
-
-        for (item in itens) {
-            val fragmentManager = supportFragmentManager
-            val fragmentTransaction = fragmentManager.beginTransaction()
-            val myFragment = PosterFragment()
-            fragmentTransaction.add(R.id.fragment_container_home, myFragment)
-            fragmentTransaction.commit()
-        }
-
-
-    }
-
-    fun goToMenuPopup(view: View?) {
-        val intent = Intent(this, ModalHomeActivity::class.java)
-        startActivity(intent)
-    }
-
+//    fun getAllItens() {
+//        val intent = intent
+//        val id = intent.getStringExtra("id")
+//
+//        val apiItens = Apis.getApiItens()
+//        val chamadaPOST = apiItens.getItens(id!!);
+//        val itens: List<Call<ItemRequest>> = listOf(chamadaPOST);
+//
+//
+//        for (item in itens) {
+//            val fragmentManager = supportFragmentManager
+//            val fragmentTransaction = fragmentManager.beginTransaction()
+//            val myFragment = PosterFragment()
+//            fragmentTransaction.add(R.id.fragment_container_home, myFragment)
+//            fragmentTransaction.commit()
+//        }
+//    }
 }
