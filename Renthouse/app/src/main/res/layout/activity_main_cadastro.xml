@@ -117,10 +117,10 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/txt_insert_phone"
+                        android:hint="Insira seu telefone "
                         style="@style/BaseEditText"
                         android:inputType="phone"
-                        android:id="@+id/cdt_celular"/>
+                        android:id="@+id/cdt_telefone"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -140,8 +140,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/txt_error_message"
-                        style="@style/TextError"/>
+                        android:text=""
+                        style="@style/TextError"
+                        android:id="@+id/text_error_cadastro"/>
 
                     <Button
                         android:layout_marginTop="10dp"
@@ -149,7 +150,7 @@
                         android:layout_height="wrap_content"
                         android:outlineSpotShadowColor="@color/white"
                         style="@style/BaseButton"
-                        android:onClick="cadastrar"
+                        android:onClick="goToSigninActivityCadastro"
                         android:text="Cadastrar" />
                 </LinearLayout>
             </LinearLayout>

@@ -8,6 +8,10 @@
     android:background="@mipmap/fundo_roxo">
 
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/fundo_roxo">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,6 +23,26 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center_vertical"
+                android:layout_weight="1"
+                >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/arrow_left"
+                    android:contentDescription="Background image"
+                    android:layout_marginLeft="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@string/txt_back'
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="390dp"
@@ -44,7 +68,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@mipmap/logo_renthouse"/>
+                            android:src="@mipmap/produto_spiderman"/>
 
 
                         </LinearLayout>
@@ -146,7 +170,7 @@
                             android:layout_marginLeft="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Horizon Zero Dawn Standard Edition Sony PS4 Físico"
+                            android:text="Spider Man 4 Sony PS4 Físico"
                             android:textColor="@color/white"
                             android:textSize="30dp"
                             android:textStyle="bold"/>
@@ -221,11 +245,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <ScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@mipmap/fundo_roxo">
-                >
+
 
 
                 <LinearLayout
@@ -246,8 +266,8 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="hfskjhfjksdfjkdfhjkdfsjkf hdskjhfsçdkfmdklmfldkmfdklsm flkdmsflkdmsfklmdsklfmsdklfmdslkmfdklmfd klsmfkdllkfsdmlkdsfmkldfmlkdfmfldkmslfkdmdlksmfkldsmflkdsmfkldsmklfdms"
-                                android:maxLines="2"
+                                android:text="Spider-Man do PS4 é um jogo de ação-aventura desenvolvido pela Insomniac Games e lançado em 2018 exclusivamente para o console PlayStation 4. O jogo apresenta uma história original que segue Peter Parker, também conhecido como Spider-Man, enquanto ele tenta equilibrar sua vida pessoal com suas responsabilidades como super-herói em Nova York."
+                                android:maxLines="7"
                                 android:scrollbars="vertical"
                                 />
 
@@ -395,12 +415,12 @@
 
 
 
-            </ScrollView>
 
 
 
         </LinearLayout>
 
     </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

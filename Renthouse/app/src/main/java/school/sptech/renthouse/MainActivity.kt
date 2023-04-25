@@ -2,13 +2,19 @@ package school.sptech.renthouse
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.TextView
+import androidx.annotation.RequiresApi
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,30 +33,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun cadastrarUsuario(componente: View){
 
-        val etNomeCompleto = findViewById<EditText>(R.id.cdt_name);
-        val etEmailCdt = findViewById<EditText>(R.id.cdt_email)
-        val etSenhaCdt = findViewById<EditText>(R.id.cdt_senha)
-        val etConfirmaSenha = findViewById<EditText>(R.id.cdt_confirma_senha)
-        val etCelular = findViewById<EditText>(R.id.cdt_celular)
-        val etDataNascimento = findViewById<EditText>(R.id.cdt_nascimento)
-        val etCpf = findViewById<EditText>(R.id.cdt_cpf)
-        val etCep = findViewById<EditText>(R.id.cdt_cep)
-
-        val activityBuyItem = Intent(applicationContext, activity_buyItem::class.java)
-
-        activityBuyItem.putExtra("nome",etNomeCompleto.text.toString())
-        activityBuyItem.putExtra("email",etEmailCdt.text.toString())
-        activityBuyItem.putExtra("senha",etSenhaCdt.text.toString())
-        activityBuyItem.putExtra("confirmar_senha",etConfirmaSenha.text.toString())
-        activityBuyItem.putExtra("celular",etCelular.text.toString())
-        activityBuyItem.putExtra("data_nascimento",etDataNascimento.text.toString())
-        activityBuyItem.putExtra("cpf",etCpf.text.toString())
-        activityBuyItem.putExtra("cep",etCep.text.toString())
-
-
-    }
 
     fun entrar(componente: View) {
 
@@ -59,22 +42,25 @@ class MainActivity : AppCompatActivity() {
         val etLogin = findViewById<EditText>(R.id.et_email)
         val etSenha = findViewById<EditText>(R.id.et_senha)
 
-        val activityBuyItem = Intent(applicationContext, activity_buyItem::class.java)
+        val homeActivity = Intent(applicationContext, HomeActivity::class.java)
 
-        activityBuyItem.putExtra("email",etLogin.text.toString())
-        activityBuyItem.putExtra("senha",etSenha.text.toString())
+        homeActivity.putExtra("email",etLogin.text.toString())
+        homeActivity.putExtra("senha",etSenha.text.toString())
 
-        verificarAutenticacao(componente.context, activityBuyItem)
+        verificarAutenticacao(componente.context, homeActivity)
+
     }
 
-    fun verificarAutenticacao(context: Context, activityBuyItem: Intent) {
+    fun verificarAutenticacao(context: Context, homeActivity: Intent) {
         /*
         Aqui estamos solicitando os dados enviados pela Activity anterior
          */
-        val emailRecebido = activityBuyItem.getStringExtra("email")
-        val senhaRecebida = activityBuyItem.getStringExtra("senha")
+        val emailRecebido = homeActivity.getStringExtra("email")
+        val senhaRecebida = homeActivity.getStringExtra("senha")
 
         // recuperando a TextView da tela
+
+        val tvAutenticacao = findViewById<TextView>(R.id.text_error)
 
         val request = LoginRequest(emailRecebido!!,senhaRecebida!!);
         // instância do cliente da API
@@ -89,14 +75,13 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onResponse(call: Call<Usuario>, response: Response<Usuario>) {
                     if (response.isSuccessful) { // se o status é 2xx
-                        print("------------------------------------------- FUNCIONOU")
-                        val userId = response.body()?.id
-                        val activityHome = Intent(applicationContext, HomeActivity::class.java)
-                        activityHome.putExtra("id", userId.toString())
-                        context.startActivity(activityBuyItem)
-
+                        val idUsuario = response.body()?.id.toString()
+                        homeActivity.putExtra("idUsuario", idUsuario)
+                        println("----------------------- id " + idUsuario)
+                        context.startActivity(homeActivity)
                     } else {
                         println("--------------------------------------------------- Deu ruuim")
+                        tvAutenticacao.text = "Login e/ou senha inválidos"
                     }
                 }
 

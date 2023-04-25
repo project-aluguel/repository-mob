@@ -48,11 +48,12 @@
                             style="@style/BaseText"
                             >
                         </TextView>
-                        <EditText
+                        <TextView
                             android:layout_width="125dp"
                             android:layout_height="50dp"
                             android:background="@color/white"
-                            style="@style/BaseEditText"/>
+                            style="@style/BaseEditText"
+                            android:id="@+id/valorCarteira"/>
                     </LinearLayout>
                     <TextView
                         android:layout_width="match_parent"
@@ -105,7 +106,8 @@
                     <EditText
                         android:layout_width="160dp"
                         android:layout_height="50dp"
-                        android:background="@color/white"/>
+                        android:background="@color/white"
+                        android:id="@+id/recarga"/>
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -127,9 +129,8 @@
                     android:layout_height="60dp"
                     style="@style/BaseButton"
                     android:text="@string/txt_button2_wallet2"
-                    android:onClick="goToPerfil"
-                    android:textSize="12sp">
-
+                    android:textSize="12sp"
+                    android:onClick="goToRechargeWallet">
                 </Button>
             </LinearLayout>
 
