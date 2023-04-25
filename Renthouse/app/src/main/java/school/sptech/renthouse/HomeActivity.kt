@@ -7,6 +7,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        getAllItens()
     }
     fun getAllItens() {
         val fragmentManager = supportFragmentManager
@@ -14,10 +15,5 @@ class HomeActivity : AppCompatActivity() {
         val myFragment = PosterFragment()
         fragmentTransaction.add(R.id.fragment_container_home, myFragment)
         fragmentTransaction.commit()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        getAllItens()
     }
 }
