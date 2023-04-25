@@ -20,4 +20,8 @@ class ModalHomeActivity : AppCompatActivity() {
         val intent = Intent(this, activity_wallet::class.java)
         startActivity(intent)
     }
+    fun goToHome(view: View?) {
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
+    }
 }
