@@ -14,7 +14,7 @@ interface ApiCarteira {
     fun buscaCarteira(@Path("idUsuario") idUsuario: String): Call<CarteiraUsuario>
 
     @PUT("carteiras/{idCarteira}")
-    fun recarregaCarteira(@Path("idUsuario") idUsuario: String, @Body body: RecargaCarteira ): Call<CarteiraUsuario>
+    fun recarregaCarteira(@Path("idCarteira") idCarteira: String, @Body body: RecargaCarteira ): Call<CarteiraUsuario>
 
 
 }

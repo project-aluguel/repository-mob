@@ -130,7 +130,7 @@
                     style="@style/BaseButton"
                     android:text="@string/txt_button2_wallet2"
                     android:textSize="12sp"
-                    android:onClick="recargaCarteira">
+                    android:onClick="goToRechargeWallet">
                 </Button>
             </LinearLayout>
 

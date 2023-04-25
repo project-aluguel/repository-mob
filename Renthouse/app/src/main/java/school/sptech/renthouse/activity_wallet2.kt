@@ -1,5 +1,6 @@
 package school.sptech.renthouse
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,16 +18,19 @@ class activity_wallet2 : AppCompatActivity() {
         setContentView(R.layout.activity_wallet2)
         // Esconde a barra de ação
         supportActionBar?.hide()
-        buscaSaldo()
+        buscaSaldo("fc453727-5bad-438c-a1f0-76020a90416b")
     }
 
-    var idCarteira = ""
+    public fun goToRechargeWallet(componente: View) {
+        val homeActivity = Intent(this, HomeActivity::class.java)
+        recargaCarteira(componente.context, homeActivity)
+    }
 
-    fun buscaSaldo(){
+
+    fun buscaSaldo(id: String){
 
         val valorCarteira = findViewById<TextView>(R.id.valorCarteira)
-        val idUsuarioRecebido = intent.getStringExtra("idUser")
-        val call = Apis.apiCarteira().buscaCarteira("e3e275af-0525-417f-933d-10d0e77f656b")
+        val call = Apis.apiCarteira().buscaCarteira(id)
 
         call.enqueue(object : Callback<CarteiraUsuario> {
             override fun onResponse(
@@ -34,7 +38,7 @@ class activity_wallet2 : AppCompatActivity() {
                 response: Response<CarteiraUsuario>
             ) {
                 if (response.isSuccessful){
-                    idCarteira = response.body()?.idCarteira.toString()
+
                     response.body()?.let {
                         valorCarteira.text = it.saldoCarteira.toString()
                     }
@@ -47,34 +51,36 @@ class activity_wallet2 : AppCompatActivity() {
         })
     }
 
-    fun recargaCarteira(component: View){
+    fun recargaCarteira(context: Context, mainActivity: Intent) {
 
         val recarga = findViewById<EditText>(R.id.recarga)
-        val call = Apis.apiCarteira().recarregaCarteira(idCarteira, RecargaCarteira(recarga.toString().toDouble()))
+        val recargaValue = recarga.text.toString().toDoubleOrNull()
 
-        call.enqueue(object : Callback<CarteiraUsuario>{
+        if (recargaValue != null) {
+            val call =
+                Apis.apiCarteira().recarregaCarteira("e5916c49-001b-46dd-9127-acc1a2a3961e", RecargaCarteira(recargaValue))
 
-            override fun onResponse(
-                call: Call<CarteiraUsuario>,
-                response: Response<CarteiraUsuario>
-            ) {
-                if (response.isSuccessful){
-                    response.body()?.let {
-                        finish();
-                        overridePendingTransition(0, 0);
-                        startActivity(getIntent());
-                        overridePendingTransition(0, 0);
+            call.enqueue(object : Callback<CarteiraUsuario> {
+                override fun onResponse(
+                    call: Call<CarteiraUsuario>,
+                    response: Response<CarteiraUsuario>
+                ) {
+                    if (response.isSuccessful) {
+                        response.body()?.let {
+                            finish();
+                            overridePendingTransition(0, 0);
+                            context.startActivity(mainActivity);
+                            overridePendingTransition(0, 0);
+                        }
                     }
                 }
-            }
 
-            override fun onFailure(call: Call<CarteiraUsuario>, t: Throwable) {
-                println(" -----------------------------------------" + t.message)
-                t.printStackTrace()
-            }
+                override fun onFailure(call: Call<CarteiraUsuario>, t: Throwable) {
+                    println(" -----------------------------------------" + t.message)
+                    t.printStackTrace()
+                }
 
-        })
-
+            })
+        }
     }
-
 }
