@@ -31,4 +31,8 @@ class HomeActivity() : AppCompatActivity() {
 //            fragmentTransaction.commit()
 //        }
 //    }
+fun goToMenuPopup(view: View?) {
+    val intent = Intent(this, ModalHomeActivity::class.java)
+    startActivity(intent)
+}
 }
