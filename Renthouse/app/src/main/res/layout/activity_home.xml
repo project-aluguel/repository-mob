@@ -213,6 +213,7 @@
                         android:orientation="vertical"
                         android:background="@drawable/layout_border"
                         android:backgroundTint="@color/white"
+                        android:onClick="goToMock"
                         android:gravity="center_horizontal">
 
                         <ImageView

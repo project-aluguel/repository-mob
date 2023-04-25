@@ -35,4 +35,8 @@ fun goToMenuPopup(view: View?) {
     val intent = Intent(this, ModalHomeActivity::class.java)
     startActivity(intent)
 }
+    fun goToMock(view: View?) {
+    val intent = Intent(this, activity_buyItem::class.java)
+    startActivity(intent)
+}
 }
