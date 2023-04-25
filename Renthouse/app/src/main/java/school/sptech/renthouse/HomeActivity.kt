@@ -3,8 +3,8 @@ package school.sptech.renthouse
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import retrofit2.Call
+import android.view.View
 
 class HomeActivity() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,10 +15,6 @@ class HomeActivity() : AppCompatActivity() {
 
     }
 
-    fun goToMenuPopup(view: View?) {
-        val intent = Intent(this, ModalHomeActivity::class.java)
-        startActivity(intent)
-    }
 //    fun getAllItens() {
 //        val intent = intent
 //        val id = intent.getStringExtra("id")
@@ -36,4 +32,12 @@ class HomeActivity() : AppCompatActivity() {
 //            fragmentTransaction.commit()
 //        }
 //    }
+fun goToMenuPopup(view: View?) {
+    val intent = Intent(this, ModalHomeActivity::class.java)
+    startActivity(intent)
+}
+    fun goToMock(view: View?) {
+    val intent = Intent(this, activity_buyItem::class.java)
+    startActivity(intent)
+}
 }

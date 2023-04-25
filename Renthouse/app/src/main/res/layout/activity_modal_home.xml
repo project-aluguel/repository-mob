@@ -17,7 +17,26 @@
         android:background="#E1000000"
         android:orientation="vertical"
         android:gravity="center_horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_vertical"
+            >
 
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/arrow_left"
+                android:contentDescription="Background image"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@string/txt_back'
+                android:textColor="@color/white"
+                android:onClick="goToHome"
+                />
+        </LinearLayout>
         <LinearLayout
             android:layout_width="380dp"
             android:layout_height="300dp"
