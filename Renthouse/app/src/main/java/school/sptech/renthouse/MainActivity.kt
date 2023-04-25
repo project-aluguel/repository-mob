@@ -75,7 +75,10 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onResponse(call: Call<Usuario>, response: Response<Usuario>) {
                     if (response.isSuccessful) { // se o status é 2xx
-                        print("------------------------------------------- FUNCIONOU")
+                        val activityWallet = Intent(applicationContext, activity_wallet::class.java)
+                        val idUsuario = response.body()?.id.toString()
+                        activityWallet.putExtra("idUsuario", idUsuario)
+                        println("----------------------- id " + idUsuario)
                         context.startActivity(homeActivity)
                     } else {
                         println("--------------------------------------------------- Deu ruuim")

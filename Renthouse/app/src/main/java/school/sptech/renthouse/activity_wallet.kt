@@ -15,14 +15,15 @@ class activity_wallet : AppCompatActivity() {
         setContentView(R.layout.activity_wallet)
         // Esconde a barra de ação
         supportActionBar?.hide()
-        buscaSaldo("9c72f13f-2d15-49f3-8e3a-7ccf5ab78a54")
+        buscaSaldo()
     }
 
-    fun buscaSaldo(id:String){
+    fun buscaSaldo(){
 
         val valorCarteira = findViewById<TextView>(R.id.valorCarteira)
-        val idUsuarioRecebido = intent.getStringExtra("idUser")
-        val call = Apis.apiCarteira().buscaCarteira(idUsuarioRecebido.toString())
+        val idUsuarioRecebido = intent.getStringExtra("idUsuario")
+        println(idUsuarioRecebido)
+        val call = Apis.apiCarteira().buscaCarteira("e3e275af-0525-417f-933d-10d0e77f656b")
 
         call.enqueue(object : Callback<CarteiraUsuario> {
             override fun onResponse(
@@ -48,8 +49,4 @@ class activity_wallet : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun goToWallet2(view: View?) {
-        val intent = Intent(this, activity_wallet2::class.java)
-        startActivity(intent)
-    }
 }

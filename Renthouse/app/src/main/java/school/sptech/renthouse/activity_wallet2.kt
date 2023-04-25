@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -18,16 +17,16 @@ class activity_wallet2 : AppCompatActivity() {
         setContentView(R.layout.activity_wallet2)
         // Esconde a barra de ação
         supportActionBar?.hide()
-        buscaSaldo("9c72f13f-2d15-49f3-8e3a-7ccf5ab78a54")
+        buscaSaldo()
     }
 
     var idCarteira = ""
 
-    fun buscaSaldo(id:String){
+    fun buscaSaldo(){
 
         val valorCarteira = findViewById<TextView>(R.id.valorCarteira)
         val idUsuarioRecebido = intent.getStringExtra("idUser")
-        val call = Apis.apiCarteira().buscaCarteira(idUsuarioRecebido.toString())
+        val call = Apis.apiCarteira().buscaCarteira("e3e275af-0525-417f-933d-10d0e77f656b")
 
         call.enqueue(object : Callback<CarteiraUsuario> {
             override fun onResponse(
@@ -77,12 +76,5 @@ class activity_wallet2 : AppCompatActivity() {
         })
 
     }
-    fun goToPerfil(view: View?) {
-        val intent = Intent(this, UserActivity::class.java)
-        startActivity(intent)
-    }
-    fun goToPerfil(view: View?) {
-        val intent = Intent(this, UserActivity::class.java)
-        startActivity(intent)
-    }
+
 }
