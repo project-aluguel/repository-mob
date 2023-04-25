@@ -47,5 +47,9 @@ class activity_wallet : AppCompatActivity() {
         val intent = Intent(this, activity_wallet2::class.java)
         startActivity(intent)
     }
+    fun goToPerfil(view: View?) {
+        val intent = Intent(this, UserActivity::class.java)
+        startActivity(intent)
+    }
 
 }

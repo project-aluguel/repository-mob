@@ -20,6 +20,10 @@ class activity_wallet2 : AppCompatActivity() {
         supportActionBar?.hide()
         buscaSaldo("fc453727-5bad-438c-a1f0-76020a90416b")
     }
+    fun goToCarteira(view: View?) {
+        val intent = Intent(this, activity_wallet::class.java)
+        startActivity(intent)
+    }
 
     public fun goToRechargeWallet(componente: View) {
         val homeActivity = Intent(this, HomeActivity::class.java)
