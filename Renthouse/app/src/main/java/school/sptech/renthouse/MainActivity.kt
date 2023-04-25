@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun goToSignupActivity(view: View?) {
-        val intent = Intent(this, MainActivityCadastro::class.java)
+        val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
     }
 
