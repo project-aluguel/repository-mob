@@ -127,6 +127,7 @@
                     android:layout_height="60dp"
                     style="@style/BaseButton"
                     android:text="@string/txt_button2_wallet2"
+                    android:onClick="goToPerfil"
                     android:textSize="12sp">
 
                 </Button>

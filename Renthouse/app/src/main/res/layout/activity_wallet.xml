@@ -84,6 +84,7 @@
                 style="@style/BaseButton"
                 android:text="@string/txt_button1_wallet1"
                 android:textSize="12sp"
+                android:onClick="goToWallet2"
                 android:layout_marginRight="20dp">
 
             </Button>
