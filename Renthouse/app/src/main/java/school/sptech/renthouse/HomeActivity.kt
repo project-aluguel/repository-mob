@@ -4,29 +4,36 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import retrofit2.Call
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Esconde a barra de ação
         supportActionBar?.hide()
         setContentView(R.layout.activity_home)
-    }
-    fun getAllItens() {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        val myFragment = PosterFragment()
-        fragmentTransaction.add(R.id.fragment_container_home, myFragment)
-        fragmentTransaction.commit()
-    }
 
-    override fun onResume() {
-        super.onResume()
-        getAllItens()
     }
 
     fun goToMenuPopup(view: View?) {
         val intent = Intent(this, ModalHomeActivity::class.java)
         startActivity(intent)
     }
+//    fun getAllItens() {
+//        val intent = intent
+//        val id = intent.getStringExtra("id")
+//
+//        val apiItens = Apis.getApiItens()
+//        val chamadaPOST = apiItens.getItens(id!!);
+//        val itens: List<Call<ItemRequest>> = listOf(chamadaPOST);
+//
+//
+//        for (item in itens) {
+//            val fragmentManager = supportFragmentManager
+//            val fragmentTransaction = fragmentManager.beginTransaction()
+//            val myFragment = PosterFragment()
+//            fragmentTransaction.add(R.id.fragment_container_home, myFragment)
+//            fragmentTransaction.commit()
+//        }
+//    }
 }

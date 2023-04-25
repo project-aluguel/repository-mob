@@ -33,4 +33,16 @@ object Apis {
         return retrofit.create(ApiCarteira::class.java)
     }
 
+
+    fun getApiItens(): ApiItens {
+        BASE_URL = "http://10.18.7.9:8080/itens/usuario/"
+        val retrofit = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(BASE_URL)
+            .build()
+        return retrofit.create(ApiItens::class.java)
+    }
+
+
+
 }
