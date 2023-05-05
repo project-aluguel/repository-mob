@@ -15,6 +15,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".RegisterProductStepTwoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterProductActivity"
+            android:exported="false" />
+        <activity
             android:name=".ModalHomeActivity"
             android:exported="false" />
         <activity

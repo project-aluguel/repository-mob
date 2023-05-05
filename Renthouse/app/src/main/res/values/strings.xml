@@ -39,4 +39,26 @@
     <string name="txt_favorite">Favoritos</string>
     <string name="txt_wallet">Carteira</string>
     <string name="txt_bag">Sacola</string>
+    <string name="txt_insert_title_product">Inserir o título do anúncio</string>
+    <string name="txt_insert_picture_product">Escolher uma foto para o anúncio</string>
+    <string name="txt_insert_description_product">Inserir a descrição do anúncio</string>
+    <string name="txt_insert_details_product">Inserir os detalhes de uso do anúncio</string>
+    <string name="txt_example_pictures_product">Arraste para cá ou selecione os arquivos desejados</string>
+    <string name="txt_example_description_product">EX:  Headset Fone de Ouvido Gamer para celular, ps4, ps5, XBox, Pc Gamer, P2 único com controle de volume</string>
+    <string name="txt_example_details_product">EX:  Funciona em qualquer equipamento com porta de áuddio Jack de 3,5mm.</string>
+    <string name="txt_insert_value_product">Inserir o valor  do produto por dia</string>
+    <string name="txt_insert_value_total">Inserir o valor  da multa (Total)</string>
+    <string name="txt_insert_tags_product">Inserir as TAGs  do produto</string>
+    <string name="txt_games">Games</string>
+    <string name="txt_books">Livros</string>
+    <string name="txt_music">Música</string>
+    <string name="txt_sports">Esportes</string>
+    <string name="txt_fantasy">Fantasia</string>
+    <string name="txt_insert_type_delivery">Inserir o tipo de entrega</string>
+    <string name="txt_only_delivery">Apenas entrega</string>
+    <string name="txt_withdrawal_delivery">Retirada ou entrega</string>
+    <string name="txt_insert_time_product">Inserir intervalo</string>
+    <string name="txt_insert_start_time">Início do anúncio</string>
+    <string name="txt_insert_final_time">Fim do anúncio</string>
+    <string name="txt_post_product">Postar anúncio</string>
 </resources>
