@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@mipmap/fundo_roxo"
+        android:scaleType="fitXY"
         android:contentDescription="Background image"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,7 +55,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/txt_name_creusa"
                 android:textSize="24sp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:id="@+id/nameUser_profile"/>
 
         </LinearLayout>
         <LinearLayout

@@ -1,5 +1,6 @@
 package school.sptech.renthouse
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,19 +11,24 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class activity_wallet : AppCompatActivity() {
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wallet)
         // Esconde a barra de ação
         supportActionBar?.hide()
 
-        buscaSaldo("fc453727-5bad-438c-a1f0-76020a90416b")
+      val userId =  SessaoUsuario.usuario.id;
+        val nomeUsuario = SessaoUsuario.usuario.nomeCompleto //
+        val nomeUsuarioTextView = findViewById<TextView>(R.id.nameUser_wallet)
+        nomeUsuarioTextView.text = "Olá $nomeUsuario você possui"
+        buscaSaldo(userId)
     }
 
-    fun buscaSaldo(id: String){
+    fun buscaSaldo(idUsuario: String){
 
         val valorCarteira = findViewById<TextView>(R.id.valorCarteira)
-        val call = Apis.apiCarteira().buscaCarteira(id)
+        val call = Apis.apiCarteira().buscaCarteira(idUsuario)
 
         call.enqueue(object : Callback<CarteiraUsuario> {
             override fun onResponse(
@@ -30,7 +36,7 @@ class activity_wallet : AppCompatActivity() {
                 response: Response<CarteiraUsuario>
             ) {
                 if (response.isSuccessful){
-                    val idCarteira = response.body()?.idCarteira.toString()
+                    println("Saldo do carteira ----, " + response.body()?.saldoCarteira.toString())
                     response.body()?.let {
                         valorCarteira.text = it.saldoCarteira.toString()
                     }

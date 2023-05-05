@@ -1,6 +1,5 @@
 package school.sptech.renthouse
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Build
@@ -83,28 +82,19 @@ if(senha_cadastro == confirma_senha)
                 if (response.isSuccessful) {
                     val activityWallet = Intent(applicationContext, activity_wallet::class.java)
                     val idUser = response.body().toString()
-                    activityWallet.putExtra("idUser", idUser)
+                    println("-------------------------------------------- EU SOU ID, " + idUser)
+                    SessaoUsuario.initIdUser(response.body().toString()!!)
+                    val criarUserCarteira = Apis.getApiUsuarios().criarCarteira(idUser);
 
-                    val enderecoMock =
-                        EnderecoRequest(cep, "Rua dos Testes",
-                            "Casa 1", "Testeville", "Testalândia",
-                            "TS", "12345", "45678", "11",
-                            "7890", "123", idUser)
-
-                    val salvarEndereco = apiUser.salvarEndereco(enderecoMock)
-
-                    salvarEndereco.enqueue(object : Callback<Endereco>{
-                        override fun onResponse(
-                            call: Call<Endereco>,
-                            response: Response<Endereco>
-                        ) {
-                            val dadosEndereco = response.body()
-                            println("Deu booooooooooooooooooom, " + dadosEndereco)
-
+                    criarUserCarteira.enqueue(object : Callback<String> {
+                        override fun onResponse(call: Call<String>, response: Response<String>) {
+                            println("CRIOU A CARTEIRAA E SEU ID É ESSE, " + response.body().toString())
+                            SessaoUsuario.initIdCarteira(response.body().toString())
+                            cadastraViaCep(cep)
                         }
 
-                        override fun onFailure(call: Call<Endereco>, t: Throwable) {
-                            println("EROOOOOOOOOR -----------------------, "+ t.message)
+                        override fun onFailure(call: Call<String>, t: Throwable) {
+                            println("DEU RUIM A CRIAR A CARTEIRA -, " + t.message)
                         }
 
                     })
@@ -132,5 +122,31 @@ if(senha_cadastro == confirma_senha)
 
 
 
+
     }
+
+    fun cadastraViaCep(cep : String){
+
+        val getViaCep = Apis.getApiViaCep()
+        println("Esse é o cep -----, " + cep)
+        val getDadosResidencia = getViaCep.getDadosResidencia(cep)
+
+        getDadosResidencia.enqueue(object : Callback<EnderecoViaCep>{
+            override fun onResponse(
+                call: Call<EnderecoViaCep>,
+                response: Response<EnderecoViaCep>
+            ) {
+                val dadosEnderecoUsuario = response.body()
+                println("deu boooom --------------------, " + dadosEnderecoUsuario)
+            }
+
+            override fun onFailure(call: Call<EnderecoViaCep>, t: Throwable) {
+                println("-----------------------------, " + t.message)
+            }
+
+
+        })
+
+    }
+
 }

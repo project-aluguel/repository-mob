@@ -5,13 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import retrofit2.Call
 import android.view.View
+import android.widget.TextView
 
 class HomeActivity() : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Esconde a barra de ação
         supportActionBar?.hide()
         setContentView(R.layout.activity_home)
+
+        val nomeUsuario = SessaoUsuario.usuario.nomeCompleto //
+
+        val nomeUsuarioTextView = findViewById<TextView>(R.id.nameUser_home)
+        nomeUsuarioTextView.text = "Olá $nomeUsuario"
 
     }
 

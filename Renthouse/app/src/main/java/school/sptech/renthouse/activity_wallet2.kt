@@ -18,7 +18,8 @@ class activity_wallet2 : AppCompatActivity() {
         setContentView(R.layout.activity_wallet2)
         // Esconde a barra de ação
         supportActionBar?.hide()
-        buscaSaldo("fc453727-5bad-438c-a1f0-76020a90416b")
+        val userId =  SessaoUsuario.usuario.id;
+        buscaSaldo(userId)
     }
     fun goToCarteira(view: View?) {
         val intent = Intent(this, activity_wallet::class.java)
@@ -27,14 +28,15 @@ class activity_wallet2 : AppCompatActivity() {
 
     public fun goToRechargeWallet(componente: View) {
         val homeActivity = Intent(this, HomeActivity::class.java)
-        recargaCarteira(componente.context, homeActivity)
+        val carteiraId = SessaoUsuario.idCarteira
+        recargaCarteira(componente.context, homeActivity,carteiraId)
     }
 
 
-    fun buscaSaldo(id: String){
+    fun buscaSaldo(idUsuario: String){
 
         val valorCarteira = findViewById<TextView>(R.id.valorCarteira)
-        val call = Apis.apiCarteira().buscaCarteira(id)
+        val call = Apis.apiCarteira().buscaCarteira(idUsuario)
 
         call.enqueue(object : Callback<CarteiraUsuario> {
             override fun onResponse(
@@ -55,14 +57,15 @@ class activity_wallet2 : AppCompatActivity() {
         })
     }
 
-    fun recargaCarteira(context: Context, mainActivity: Intent) {
+    fun recargaCarteira(context: Context, mainActivity: Intent, carteiraId : String) {
 
         val recarga = findViewById<EditText>(R.id.recarga)
         val recargaValue = recarga.text.toString().toDoubleOrNull()
 
+
         if (recargaValue != null) {
             val call =
-                Apis.apiCarteira().recarregaCarteira("e5916c49-001b-46dd-9127-acc1a2a3961e", RecargaCarteira(recargaValue))
+                Apis.apiCarteira().recarregaCarteira(carteiraId, RecargaCarteira(recargaValue))
 
             call.enqueue(object : Callback<CarteiraUsuario> {
                 override fun onResponse(

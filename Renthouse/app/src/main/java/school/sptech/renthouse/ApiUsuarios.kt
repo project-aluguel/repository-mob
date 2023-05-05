@@ -1,10 +1,7 @@
 package school.sptech.renthouse
 
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface ApiUsuarios {
 
@@ -13,6 +10,9 @@ interface ApiUsuarios {
 
     @POST("/usuarios")
     fun criarUsuario(@Body body: UsuarioRequest): Call<String>
+
+    @POST("/carteiras/{idUsuario}")
+    fun criarCarteira(@Path("idUsuario") idUsuario: String): Call<String>
 
     @POST("/enderecos")
     fun salvarEndereco(@Body body: EnderecoRequest): Call<Endereco>

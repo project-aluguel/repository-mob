@@ -9,7 +9,7 @@ import retrofit2.http.Query
 
 interface ApiViaCep {
 
-    @GET("/{cep}/json/")
-    fun getDadosResidencia(@Path("cep") cep : String): Call<Endereco>
+    @GET("/{cep}/json")
+    fun getDadosResidencia(@Path("cep") cep : String): Call<EnderecoViaCep>
 
 }

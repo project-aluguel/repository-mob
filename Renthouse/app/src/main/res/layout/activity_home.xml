@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@mipmap/fundo_roxo"
+        android:scaleType="fitXY"
         android:contentDescription="Background image"/>
     <ScrollView
         android:layout_width="match_parent"
@@ -65,7 +66,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/TextTitle"
-                    android:text="Olá usuario"/>
+                    android:text="Olá usuario"
+                    android:id="@+id/nameUser_home"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

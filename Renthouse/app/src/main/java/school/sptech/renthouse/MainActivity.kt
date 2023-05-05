@@ -78,6 +78,7 @@ class MainActivity : AppCompatActivity() {
                         val idUsuario = response.body()?.id.toString()
                         homeActivity.putExtra("idUsuario", idUsuario)
                         println("----------------------- id " + idUsuario)
+                        SessaoUsuario.initUsuario(response.body()!!)
                         context.startActivity(homeActivity)
                     } else {
                         println("--------------------------------------------------- Deu ruuim")
