@@ -15,6 +15,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".FavoritePageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SegmentProductActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterProductStepTwoActivity"
             android:exported="false" />
         <activity
