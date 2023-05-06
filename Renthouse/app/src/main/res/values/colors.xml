@@ -10,4 +10,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="white_trans_txt">#80FFFFFF</color>
     <color name="white_trans">#25FFFFFF</color>
+    <color name="grey_trans">#90444444</color>
 </resources>
