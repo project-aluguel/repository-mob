@@ -75,9 +75,6 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onResponse(call: Call<Usuario>, response: Response<Usuario>) {
                     if (response.isSuccessful) { // se o status é 2xx
-                        val idUsuario = response.body()?.id.toString()
-                        homeActivity.putExtra("idUsuario", idUsuario)
-                        println("----------------------- id " + idUsuario)
                         SessaoUsuario.initUsuario(response.body()!!)
                         context.startActivity(homeActivity)
                     } else {

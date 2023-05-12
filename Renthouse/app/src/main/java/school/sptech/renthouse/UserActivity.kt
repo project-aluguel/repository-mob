@@ -18,9 +18,8 @@ class UserActivity : AppCompatActivity() {
         val nomeUsuario = SessaoUsuario.usuario.nomeCompleto //
         val nomeUsuarioTextView = findViewById<TextView>(R.id.nameUser_profile)
         nomeUsuarioTextView.text = "Olá $nomeUsuario você possui"
-
-
     }
+
     fun goToCarteira(view: View?) {
         val intent = Intent(this, activity_wallet::class.java)
         startActivity(intent)
@@ -33,4 +32,10 @@ class UserActivity : AppCompatActivity() {
         val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
     }
+    fun goToCadastrarItem(view: View?) {
+        val intent = Intent(this, RegisterProductActivity::class.java)
+        startActivity(intent)
+    }
+
+
 }

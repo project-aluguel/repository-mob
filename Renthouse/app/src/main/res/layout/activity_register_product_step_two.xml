@@ -56,6 +56,7 @@
                     android:layout_height="wrap_content"
                     style="@style/BaseEditText"
                     android:inputType="textEmailAddress"
+                    android:id="@+id/valor_diario"
                     android:layout_marginTop="10dp"
                     />
             </LinearLayout>
@@ -74,6 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/BaseEditText"
+                    android:id="@+id/valor_multa"
                     android:inputType="textEmailAddress"
                     android:layout_marginTop="10dp"
                     />
@@ -106,7 +108,7 @@
                     android:text="@string/txt_games"
                     android:layout_marginRight="15dp"
                     android:layout_gravity="center|right"
-                    />
+                    android:onClick="activeGame" />
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
@@ -115,7 +117,7 @@
                     android:text="@string/txt_books"
                     android:layout_marginRight="15dp"
                     android:layout_gravity="center|right"
-                    />
+                    android:onClick="activeLivro"  />
 
                     <Button
                         style="@style/BaseButton"
@@ -124,7 +126,8 @@
                         android:layout_marginRight="15dp"
                         android:layout_gravity="center|right"
                         android:outlineSpotShadowColor="@color/white"
-                        android:text="@string/txt_music" />
+                        android:text="@string/txt_music"
+                        android:onClick="activeMusica"/>
 
                     <Button
                         android:layout_marginRight="15dp"
@@ -134,6 +137,7 @@
                     style="@style/BaseButton"
                     android:text="@string/txt_sports"
                     android:layout_gravity="center|right"
+                        android:onClick="activeEsporte"
                     />
                     <Button
                     android:layout_width="wrap_content"
@@ -142,6 +146,7 @@
                     style="@style/BaseButton"
                     android:text="@string/txt_fantasy"
                     android:layout_gravity="center|right"
+                        android:onClick="activeFantasia"
                     />
                 </LinearLayout>
                 </HorizontalScrollView>
@@ -177,11 +182,10 @@
                             style="@style/BaseTextTitleNegociation"
                             />
                         <CheckBox
-                            android:id="@+id/chk1"
+                            android:id="@+id/apenas_entrega"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="true"
-
                             />
 
                     </LinearLayout>
@@ -198,11 +202,10 @@
                             style="@style/BaseTextTitleNegociation"
                             />
                         <CheckBox
-                            android:id="@+id/chk2"
+                            android:id="@+id/retirada_entrega"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="true"
-
                             />
 
                     </LinearLayout>
@@ -240,6 +243,7 @@
                             />
                         <EditText
                             android:layout_width="150dp"
+                            android:id="@+id/data_inicio"
                             android:layout_height="wrap_content"
                             style="@style/BaseEditText"
                             android:inputType="date"
@@ -264,6 +268,7 @@
 
                         <EditText
                             android:layout_width="150dp"
+                            android:id="@+id/data_fim"
                             android:layout_height="wrap_content"
                             android:hint="30/12/2021"
                             style="@style/BaseEditText"
@@ -288,6 +293,7 @@
                     style="@style/BaseButton"
                     android:text="@string/txt_post_product"
                     android:layout_gravity="center|right"
+                    android:onClick="cadastrar"
                     />
 
             </LinearLayout>

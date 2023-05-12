@@ -6,7 +6,7 @@ import retrofit2.create
 
 object Apis {
 
-    var BASE_URL = "http://192.168.0.15:8080"
+    var BASE_URL = "http://renthouse-app.duckdns.org:8080"
     var URL_VIACEP = "http://viacep.com.br/ws/"
 
     fun getApiUsuarios(): ApiUsuarios {
@@ -35,7 +35,6 @@ object Apis {
 
 
     fun getApiItens(): ApiItens {
-        BASE_URL = "http://10.18.7.9:8080/itens/usuario/"
         val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BASE_URL)

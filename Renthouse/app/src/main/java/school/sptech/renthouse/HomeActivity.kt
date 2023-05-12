@@ -5,7 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import retrofit2.Call
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
+import com.squareup.picasso.Picasso
+import retrofit2.Callback
+import retrofit2.Response
 
 class HomeActivity() : AppCompatActivity() {
 
@@ -16,9 +20,34 @@ class HomeActivity() : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         val nomeUsuario = SessaoUsuario.usuario.nomeCompleto //
+        val idUser = SessaoUsuario.usuario.id
 
         val nomeUsuarioTextView = findViewById<TextView>(R.id.nameUser_home)
         nomeUsuarioTextView.text = "Olá $nomeUsuario"
+
+        val apiItens = Apis.getApiItens();
+        val getItensCatalgo = apiItens.getItensCatalogo(idUser)
+
+        getItensCatalgo.enqueue(object : Callback<List<CatalogoItem>> {
+            override fun onResponse(call: Call<List<CatalogoItem>>, response: Response<List<CatalogoItem>>) {
+                if (response.isSuccessful && response.body()!=null && response.body()?.isNotEmpty()!!) {
+
+                    println("deu boom -------------, "+ response.body())
+                    response.body()!!.forEach {
+
+                        // este código abaixo deve estar na fragment
+                        Picasso.with(baseContext)
+                            .load(it?.imagemUrl)
+                            .into(findViewById<ImageView>(R.id.imagem_poster))
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<List<CatalogoItem>>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
 
     }
 

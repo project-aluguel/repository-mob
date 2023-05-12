@@ -35,6 +35,7 @@ class activity_wallet2 : AppCompatActivity() {
 
     fun buscaSaldo(idUsuario: String){
 
+
         val valorCarteira = findViewById<TextView>(R.id.valorCarteira)
         val call = Apis.apiCarteira().buscaCarteira(idUsuario)
 

@@ -63,6 +63,7 @@
                     style="@style/BaseEditText"
                     android:inputType="textEmailAddress"
                     android:layout_marginTop="10dp"
+                    android:id="@+id/titulo_item"
                     />
             </LinearLayout>
             <LinearLayout
@@ -83,6 +84,7 @@
                     style="@style/BaseEditText"
                     android:inputType="text"
                     android:layout_marginTop="10dp"
+                    android:id="@+id/url_image"
                     />
 
             </LinearLayout>
@@ -104,6 +106,8 @@
                     style="@style/BaseEditText"
                     android:inputType="text"
                     android:layout_marginTop="10dp"
+                    android:id="@+id/descricao"
+
                     />
             </LinearLayout>
             <LinearLayout
@@ -124,6 +128,7 @@
                     style="@style/BaseEditText"
                     android:inputType="text"
                     android:layout_marginTop="10dp"
+                    android:id="@+id/manual_uso"
                     />
 
             </LinearLayout>
@@ -140,6 +145,7 @@
                     style="@style/BaseButton"
                     android:text="@string/txt_next"
                     android:layout_gravity="center|right"
+                    android:onClick="goToStepRegister2"
                     />
 
             </LinearLayout>

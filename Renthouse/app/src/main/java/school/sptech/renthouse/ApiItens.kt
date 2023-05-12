@@ -8,6 +8,10 @@ import retrofit2.http.Path
 
 interface ApiItens {
 
-    @GET("{id}")
-    fun getItens(@Path("id") id: String): Call<ItemRequest>
+    @GET("/itens/catalogo/{idUsuario}")
+    fun getItensCatalogo(@Path("idUsuario") id: String): Call<List<CatalogoItem>>
+
+    @POST("/itens")
+    fun postItens(@Body body: RegisterItemRequest): Call<String>
+
 }

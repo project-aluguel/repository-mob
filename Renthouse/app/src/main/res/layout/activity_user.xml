@@ -229,7 +229,7 @@
                         android:layout_height="wrap_content"
                         android:text="Cadastrar Produtos"
                         android:gravity="center"
-                        android:onClick="goToCadastrarProduto"
+                        android:onClick="goToCadastrarItem"
                         style="@style/BaseTextUserPage"/>
                 </LinearLayout>
                 <LinearLayout
