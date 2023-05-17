@@ -7,6 +7,8 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface ApiItens {
+    @GET
+    fun getAllItens(): Call<List<Item>>
 
     @GET("{id}")
     fun getItens(@Path("id") id: String): Call<ItemRequest>

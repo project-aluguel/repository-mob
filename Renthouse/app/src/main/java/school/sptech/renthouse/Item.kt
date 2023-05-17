@@ -10,4 +10,5 @@ data class Item(
     val atualizadoEm:LocalDateTime, val valorGarantia:Double, val valorItem:Double,
     val alugado:Boolean, val entregaFrete:Boolean, val entregaPessoal:Boolean,
     val usuarioModel:Usuario
-)
+):java.io.Serializable {
+}

@@ -14,13 +14,11 @@
         android:background="@drawable/layout_border"
         android:backgroundTint="@color/white"
         android:gravity="center_horizontal">
-
         <ImageView
             android:layout_width="100dp"
             android:layout_height="150dp"
             android:id="@+id/imagem_poster"
             android:src="@mipmap/produto_spiderman"/>
-
         <LinearLayout
             android:layout_marginTop="5dp"
             android:layout_marginBottom="15dp"
@@ -30,6 +28,7 @@
             android:gravity="center_horizontal">
 
             <TextView
+                android:id="@+id/nome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Produto"
@@ -40,19 +39,15 @@
                 style="@style/BaseText"/>
 
             <TextView
+                android:id="@+id/valor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="R$50,00 dia"
                 android:textSize="18sp"
                 android:textFontWeight="0"
-                android:id="@+id/valor"
                 android:textColor="#F605F2"
                 android:gravity="start"
                 style="@style/BaseText"/>
-
         </LinearLayout>
-
-
     </LinearLayout>
-
 </FrameLayout>

@@ -7,33 +7,46 @@ import android.view.LayoutInflater
 import retrofit2.Call
 import android.view.View
 import android.view.ViewGroup
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class HomeActivity() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Esconde a barra de ação
         supportActionBar?.hide()
         setContentView(R.layout.activity_home)
 
+        val api = Apis.getApiItens()
+        val call = api.getAllItens()
 
-        val i1:ItemRequest? = null
-        val i2:ItemRequest? = null
-        val i3:ItemRequest? = null
-        val i4:ItemRequest? = null
-        val itens = listOf(i1, i2, i3, i4);
+        call.enqueue(object : Callback<List<Item>> {
+            override fun onResponse(call: Call<List<Item>>, response: Response<List<Item>>) {
+                if (response.isSuccessful) {
+                    val itens = response.body()
 
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
+                    val fragmentManager = supportFragmentManager
+                    val fragmentTransaction = fragmentManager.beginTransaction()
 
-        for (item in itens) {
-            val myFragment = PosterFragment()
-            val argumentos = Bundle()
-            argumentos.putSerializable("item", item)
-            myFragment.arguments = argumentos
-            fragmentTransaction.add(R.id.fragment_container_home, myFragment)
-        }
+                    if (itens != null) {
+                        for (item in itens) {
+                            val myFragment = PosterFragment()
+                            val argumentos = Bundle()
+                            argumentos.putSerializable("item", item)
+                            myFragment.arguments = argumentos
+                            fragmentTransaction.add(R.id.fragment_container_home, myFragment)
+                        }
+                    }
 
-        fragmentTransaction.commit()
+                    fragmentTransaction.commit()
+                }
+            }
+
+            override fun onFailure(call: Call<List<Item>>, t: Throwable) {
+                // Tratar falha na chamada ao endpoint
+            }
+        })
     }
 
 //    fun getAllItens() {

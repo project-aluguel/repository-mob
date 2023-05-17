@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,6 +34,10 @@ class PosterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val item = arguments?.getSerializable("item") as ItemRequest
+        val nomeProduto = view.findViewById<TextView>(R.id.nome)
+        val valorProduto = view.findViewById<TextView>(R.id.valor)
+        nomeProduto.setText(item.nome)
+        valorProduto.setText("R$" + valorProduto + " Dia")
 
         // usar os atributos de item para preencher os componentes da fargment
     }

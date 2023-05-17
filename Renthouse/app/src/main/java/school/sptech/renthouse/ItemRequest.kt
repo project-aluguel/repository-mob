@@ -10,5 +10,5 @@ data class ItemRequest(
     val valorGarantia:Double, val valorItem:Double,
     val alugado:Boolean, val entregaFrete:Boolean, val entregaPessoal:Boolean,
     val usuarioModel:String
-) {
+):java.io.Serializable {
 }
