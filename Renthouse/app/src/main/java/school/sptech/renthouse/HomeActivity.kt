@@ -29,25 +29,54 @@ class HomeActivity() : AppCompatActivity() {
         val getItensCatalgo = apiItens.getItensCatalogo(idUser)
 
         getItensCatalgo.enqueue(object : Callback<List<CatalogoItem>> {
-            override fun onResponse(call: Call<List<CatalogoItem>>, response: Response<List<CatalogoItem>>) {
-                if (response.isSuccessful && response.body()!=null && response.body()?.isNotEmpty()!!) {
+            override fun onResponse(
+                call: Call<List<CatalogoItem>>,
+                response: Response<List<CatalogoItem>>
+            ) {
+                if (response.isSuccessful) {
+                    val itens = response.body()
 
-                    println("deu boom -------------, "+ response.body())
-                    response.body()!!.forEach {
+                    val fragmentManager = supportFragmentManager
+                    val fragmentTransaction = fragmentManager.beginTransaction()
 
-                        // este código abaixo deve estar na fragment
-                        Picasso.with(baseContext)
-                            .load(it?.imagemUrl)
-                            .into(findViewById<ImageView>(R.id.imagem_poster))
+                    if (itens != null) {
+                        for (item in itens) {
+                            val myFragment = PosterFragment()
+                            val argumentos = Bundle()
+                            argumentos.putSerializable("item", item)
+                            myFragment.arguments = argumentos
+                            fragmentTransaction.add(R.id.fragment_container_home, myFragment)
+                        }
                     }
+
+                    fragmentTransaction.commit()
                 }
             }
-
             override fun onFailure(call: Call<List<CatalogoItem>>, t: Throwable) {
-                TODO("Not yet implemented")
+                // Tratar falha na chamada ao endpoint
             }
-
         })
+
+//        getItensCatalgo.enqueue(object : Callback<List<CatalogoItem>> {
+//            override fun onResponse(call: Call<List<CatalogoItem>>, response: Response<List<CatalogoItem>>) {
+//                if (response.isSuccessful && response.body()!=null && response.body()?.isNotEmpty()!!) {
+//
+//                    println("deu boom -------------, "+ response.body())
+//                    response.body()!!.forEach {
+//
+//                        // este código abaixo deve estar na fragment
+//                        Picasso.with(baseContext)
+//                            .load(it?.imagemUrl)
+//                            .into(findViewById<ImageView>(R.id.imagem_poster))
+//                    }
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<List<CatalogoItem>>, t: Throwable) {
+//                TODO("Not yet implemented")
+//            }
+//
+//        })
 
     }
 

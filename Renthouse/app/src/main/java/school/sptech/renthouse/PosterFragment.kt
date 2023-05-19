@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import com.squareup.picasso.Picasso
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,8 +29,6 @@ class PosterFragment : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
-
-
         }
     }
 
@@ -35,6 +36,15 @@ class PosterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val item = arguments?.getSerializable("item") as CatalogoItem
+        val nomeProduto = view?.findViewById<TextView>(R.id.nome)
+        val valorProduto = view?.findViewById<TextView>(R.id.valor)
+        nomeProduto?.text = item.nome
+        valorProduto?.text = "R$" + valorProduto + " Dia"
+//        Picasso.with(baseContext)
+//            .load(it?.imagemUrl)
+//            .into(findViewById<ImageView>(R.id.imagem_poster))
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_poster, container, false)
     }
