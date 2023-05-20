@@ -36,6 +36,12 @@ class UserActivity : AppCompatActivity() {
         val intent = Intent(this, RegisterProductActivity::class.java)
         startActivity(intent)
     }
+    fun goToMyProducts(view: View?) {
+        val intent = Intent(this, MyProductActivity::class.java)
+        startActivity(intent)
+    }
+
+
 
 
 }

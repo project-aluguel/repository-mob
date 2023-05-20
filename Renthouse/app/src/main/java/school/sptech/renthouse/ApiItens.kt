@@ -14,4 +14,7 @@ interface ApiItens {
     @POST("/itens")
     fun postItens(@Body body: RegisterItemRequest): Call<String>
 
+    @GET("/itens/usuario/{idUsuario}")
+    fun myItensUser(@Path("idUsuario") id: String): Call<List<ItemUserProduct>>
+
 }
