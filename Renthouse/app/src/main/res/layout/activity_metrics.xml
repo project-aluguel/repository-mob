@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MetricsActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/fundo_roxo">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#88111111"
+            android:orientation="vertical"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1"
+                    >
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@mipmap/arrow_left"
+                        android:contentDescription="Background image"
+                        android:layout_marginLeft="20dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text='@string/txt_back'
+                        android:onClick="goToHome"
+                        android:textColor="@color/white"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="390dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="550dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/produto_spiderman"/>
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="110dp"
+                                android:layout_height="45dp"
+                                >
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/star"
+                                    android:layout_weight="1"/><ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/star"
+                                android:layout_weight="1"/><ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/star"
+                                android:layout_weight="1"/><ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/star"
+                                android:layout_weight="1"/><ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/star"
+                                android:layout_weight="1"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                >
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Esse produto foi anunciado pelo Enzo Brigante"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                >
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Avaliação do anunciante"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"
+                                    android:textSize="17sp"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="125dp"
+                                android:layout_height="45dp"
+                                >
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/star"
+                                    android:layout_weight="1"/><ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/star"
+                                android:layout_weight="1"/><ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/star"
+                                android:layout_weight="1"/><ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/star"
+                                android:layout_weight="1"/><ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/star"
+                                android:layout_weight="1"/>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:gravity="center"
+                            >
+                            <TextView
+                                android:layout_marginLeft="15dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Spider Man 4 Sony PS4 Físico"
+                                android:textColor="@color/white"
+                                android:textSize="30dp"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_marginLeft="15dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="R$ 3,55 por dia"
+                                android:textColor="@color/white"
+                                android:textSize="25dp"
+                                android:textStyle="bold"/><TextView
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ver os meios de pagamento"
+                            android:textColor="@color/white"
+                            android:textSize="13.6dp"
+                            android:textStyle="bold"/>
+                        </LinearLayout>  <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_marginLeft="15dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Saiba os prazos de entrega e as formas de envio.
+                           "
+                            android:textColor="@color/white"
+                            android:textSize="14.6dp"
+                            android:textStyle="bold"/><TextView
+                        android:layout_marginLeft="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Calcular o prazo de entrega"
+                        android:textColor="@color/white"
+                        android:textSize="13.6dp"
+                        android:textStyle="bold"/>
+                    </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:text="Adicionar anuncios aos favoritos"
+                                android:textColor="@color/white"
+                                android:textSize="10.6dp"/>
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:gravity="center">
+                            <Button
+                                android:layout_width="180dp"
+                                android:layout_height="80dp"
+                                style="@style/BaseButton"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:text="Alugar"></Button>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="390dp"
+                        android:layout_height="200dp"
+                        android:gravity="center|top">
+
+                        <LinearLayout
+                            android:layout_width="350dp"
+                            android:layout_height="200dp"
+                            android:background="@color/white">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Spider-Man do PS4 é um jogo de ação-aventura desenvolvido pela Insomniac Games e lançado em 2018 exclusivamente para o console PlayStation 4. O jogo apresenta uma história original que segue Peter Parker, também conhecido como Spider-Man, enquanto ele tenta equilibrar sua vida pessoal com suas responsabilidades como super-herói em Nova York."
+                                android:maxLines="7"
+                                android:scrollbars="vertical"
+                                />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Anuncios Semelhantes"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="120dp"
+                            android:layout_margin="20dp"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                >
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/star"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:gravity="center"
+                                android:background="@color/white"
+
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Spider-man PS4"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="13sp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="R$ 5,50 dia"
+                                    android:textColor="@color/black"/>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="120dp"
+                            android:layout_margin="20dp"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                >
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/star"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:background="@color/white"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Spider-man PS4"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="13sp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="R$ 5,50 dia"
+                                    android:textColor="@color/black"/>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="120dp"
+                            android:layout_margin="20dp"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                >
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/star"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:background="@color/white"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Spider-man PS4"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="13sp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="R$ 5,50 dia"
+                                    android:textColor="@color/black"/>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

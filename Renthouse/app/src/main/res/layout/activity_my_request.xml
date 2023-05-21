@@ -5,5 +5,232 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".my_request">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/fundo_roxo"
+        android:contentDescription="Background image"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#88000000"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                >
+
+                <ImageView
+                    android:id="@+id/menu_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_kebab"
+                    android:onClick="goToMenuPopup"
+                    android:layout_weight="1"
+                    android:contentDescription="menu_icon_description"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"/>
+
+                <ImageView
+                    android:id="@+id/menu_icons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:contentDescription="menu_icon_description"
+                    android:src="@drawable/ic_user_circle" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:gravity="start">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/TextTitle"
+                    android:text="Meus Pedidos"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Pesquisar"
+                    style="@style/BaseEditText"
+                    android:inputType="textEmailAddress"
+                    android:backgroundTint="@color/white"
+                    android:background="@drawable/button_border"
+                    android:padding="10dp" />
+
+            </LinearLayout>
+
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="20dp"
+                    >
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="14dp"
+                        android:outlineSpotShadowColor="@color/white"
+                        style="@style/BaseButton"
+                        android:text="Games" />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="14dp"
+                        android:outlineSpotShadowColor="@color/white"
+                        style="@style/BaseButton"
+                        android:text="Livros" />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="14dp"
+                        android:outlineSpotShadowColor="@color/white"
+                        style="@style/BaseButton"
+                        android:text="Música" />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="14dp"
+                        android:outlineSpotShadowColor="@color/white"
+                        style="@style/BaseButton"
+                        android:text="Esportes" />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:outlineSpotShadowColor="@color/white"
+                        style="@style/BaseButton"
+                        android:text="Fantasia" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                >
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/BaseButton"
+                    android:background="#00000000"
+
+                    android:text="Desfazer exclusão"
+                    android:textSize="12sp"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    >
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/BaseButton"
+                        android:background="#00000000"
+                        android:text="Cadastrar produto"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fragment_container_home"
+                    android:layout_marginRight="30dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:paddingTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/layout_border"
+                        android:backgroundTint="@color/white"
+                        android:onClick="goToMock"
+                        android:gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:id="@+id/imagem_poster"
+                            android:src="@mipmap/produto_spiderman"/>
+
+                        <LinearLayout
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Produto"
+                                android:textSize="18sp"
+                                android:textColor="#000"
+                                android:gravity="start"
+                                android:textFontWeight="2"
+                                style="@style/BaseText"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="R$50,00 dia"
+                                android:textSize="18sp"
+                                android:textFontWeight="0"
+                                android:id="@+id/valor"
+                                android:textColor="#F605F2"
+                                android:gravity="start"
+                                style="@style/BaseText"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
