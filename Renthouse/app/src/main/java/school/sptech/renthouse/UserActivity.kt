@@ -41,6 +41,11 @@ class UserActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun goToMyRequests(view: View?){
+        val intent = Intent(this, my_request::class.java)
+        startActivity(intent)
+    }
+
 
 
 

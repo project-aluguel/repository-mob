@@ -187,7 +187,8 @@
                         android:layout_height="wrap_content"
                         android:text="Histórico"
                         android:gravity="center"
-                        style="@style/BaseTextUserPage"/>
+                        style="@style/BaseTextUserPage"
+                        android:onClick="goToMyRequests"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="20dp"
