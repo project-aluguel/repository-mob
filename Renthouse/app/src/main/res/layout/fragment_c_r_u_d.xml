@@ -11,29 +11,34 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center"
+    android:background="@color/black"
     >
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/txt_name"
         style="@style/BaseEditText"
+        android:id="@+id/nameEditText"
         android:inputType="text"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/txt_email"
+        android:id="@+id/emailEditText"
         style="@style/BaseEditText"
         android:inputType="textEmailAddress"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/txt_address"
+        android:id="@+id/addressEditText"
         style="@style/BaseEditText"
         android:inputType="text"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/txt_password"
+        android:id="@+id/passwordEditText"
         style="@style/BaseEditText"
         android:inputType="textPassword"/>
     <TextView
@@ -49,6 +54,7 @@
         android:layout_height="wrap_content"
         android:outlineSpotShadowColor="@color/white"
         style="@style/BaseButton"
+        android:id="@+id/saveButton"
         android:text="Salvar alterações"
         android:layout_gravity="center"
 
