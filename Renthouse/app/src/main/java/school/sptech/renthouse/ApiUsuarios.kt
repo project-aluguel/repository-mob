@@ -11,6 +11,9 @@ interface ApiUsuarios {
     @POST("/usuarios")
     fun criarUsuario(@Body body: UsuarioRequest): Call<String>
 
+    @PUT("{idUsuario}")
+    fun atualizarUsuario(@Path("idUsuario") idUsuario: String, @Body body: AtualizaUsuarioRequest): Call<AtualizaUsuario>
+
     @POST("/carteiras/{idUsuario}")
     fun criarCarteira(@Path("idUsuario") idUsuario: String): Call<String>
 
