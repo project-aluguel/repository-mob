@@ -40,8 +40,15 @@ class UserActivity : AppCompatActivity() {
         val intent = Intent(this, MyProductActivity::class.java)
         startActivity(intent)
     }
+    fun goToEditarPerfil(view: View) {
+        val crudFragment = CRUDFragment()
 
+        val transaction = supportFragmentManager.beginTransaction()
 
+        transaction.replace(R.id.layout_user, crudFragment)
+
+        transaction.commit()
+    }
 
 
 }
