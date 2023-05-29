@@ -46,8 +46,8 @@ class PosterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val item = arguments?.getSerializable("item") as CatalogoItem
-        val nomeProduto = view?.findViewById<TextView>(R.id.nome)
-        val valorProduto = view?.findViewById<TextView>(R.id.valor)
+        val nomeProduto = view.findViewById<TextView>(R.id.nome)
+        val valorProduto = view.findViewById<TextView>(R.id.valor)
         val imgView = view.findViewById<ImageView>(R.id.imagem_poster)
         val imgUrl = item.imagemUrl
         Picasso.with(context).load(imgUrl).into(imgView)
