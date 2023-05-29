@@ -25,14 +25,22 @@ class my_request : AppCompatActivity() {
             ) {
                 if (response.isSuccessful && response.body()!=null && response.body()?.isNotEmpty()!!) {
 
-                    println("DEU BUUUM! -------------, "+ response.body())
-                    response.body()!!.forEach {
+                    val myItems = response.body()
 
-                        // este código abaixo deve estar na fragment
-                        Picasso.with(baseContext)
-                            .load(it?.imagemUrl)
-                            .into(findViewById<ImageView>(R.id.imagem_poster))
+                    val fragmentManager = supportFragmentManager
+                    val fragmentTransaction = fragmentManager.beginTransaction()
+
+                    if (myItems != null) {
+                        for (item in myItems) {
+                            val myFragment = MyRequestItem()
+                            val argumentos = Bundle()
+                            argumentos.putSerializable("myItem", item)
+                            myFragment.arguments = argumentos
+                            fragmentTransaction.add(R.id.fragment_container_my_request, myFragment)
+                        }
                     }
+
+                    fragmentTransaction.commit()
                 }
             }
 

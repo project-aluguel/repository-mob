@@ -5,5 +5,5 @@ data class ItemRequestedUser(val idNegociacao: String,
                              val valorEmprestimo: Double,
                              val imagemUrl: String,
                              val idItem: String,
-                             val idProprietario: String){
+                             val idProprietario: String):java.io.Serializable{
 }

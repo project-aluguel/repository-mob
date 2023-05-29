@@ -24,14 +24,23 @@ class MyProductActivity : AppCompatActivity() {
             override fun onResponse(call: Call<List<ItemUserProduct>>, response: Response<List<ItemUserProduct>>) {
                 if (response.isSuccessful && response.body()!=null && response.body()?.isNotEmpty()!!) {
 
-                    println("enzooola -------------, "+ response.body())
-                    response.body()!!.forEach {
+                    val myProducts = response.body()
 
-                        // este código abaixo deve estar na fragment
-                        Picasso.with(baseContext)
-                            .load(it?.imagemUrl)
-                            .into(findViewById<ImageView>(R.id.imagem_poster))
+                    val fragmentManager = supportFragmentManager
+                    val fragmentTransaction = fragmentManager.beginTransaction()
+
+                    if (myProducts != null) {
+                        for (item in myProducts) {
+                            val myFragment = MyProductsPoster()
+                            val argumentos = Bundle()
+                            argumentos.putSerializable("myProducts", item)
+                            myFragment.arguments = argumentos
+                            fragmentTransaction.add(R.id.fragment_container_my_product, myFragment)
+                        }
                     }
+
+                    fragmentTransaction.commit()
+
                 }
             }
 
