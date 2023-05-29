@@ -38,10 +38,7 @@ class PosterFragment : Fragment() {
     ): View? {
 
 
-//        Picasso.with(baseContext)
-//            .load(it?.imagemUrl)
-//            .into(findViewById<ImageView>(R.id.imagem_poster))
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_poster, container, false)
     }
 
@@ -51,6 +48,9 @@ class PosterFragment : Fragment() {
         val item = arguments?.getSerializable("item") as CatalogoItem
         val nomeProduto = view?.findViewById<TextView>(R.id.nome)
         val valorProduto = view?.findViewById<TextView>(R.id.valor)
+        val imgView = view.findViewById<ImageView>(R.id.imagem_poster)
+        val imgUrl = item.imagemUrl
+        Picasso.with(context).load(imgUrl).into(imgView)
         nomeProduto?.text = item.nome
         valorProduto?.text = "R$${item.valorItem} Dia"
     }
