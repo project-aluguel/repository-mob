@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import com.squareup.picasso.Picasso
+import com.bumptech.glide.Glide
+//import com.squareup.picasso.Picasso
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -48,7 +49,9 @@ class MyProductsPoster : Fragment() {
         val valorProduto = view.findViewById<TextView>(R.id.valor)
         val imgView = view.findViewById<ImageView>(R.id.imagem_poster)
         val imgUrl = myProductsItem.imagemUrl
-        Picasso.with(context).load(imgUrl).into(imgView)
+       // Picasso.with(context).load(imgUrl).into(imgView)
+        Glide.with(this).load(imgUrl).into(imgView);
+
         nomeProduto?.text = myProductsItem.nome
         valorProduto?.text = "R$${myProductsItem.valorItem} Dia"
     }

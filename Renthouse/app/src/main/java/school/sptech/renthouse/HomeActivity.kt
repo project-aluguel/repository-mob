@@ -7,7 +7,6 @@ import retrofit2.Call
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import com.squareup.picasso.Picasso
 import retrofit2.Callback
 import retrofit2.Response
 
@@ -18,6 +17,7 @@ class HomeActivity() : AppCompatActivity() {
         // Esconde a barra de ação
         supportActionBar?.hide()
         setContentView(R.layout.activity_home)
+
 
         val nomeUsuario = SessaoUsuario.usuario.nomeCompleto //
         val idUser = SessaoUsuario.usuario.id
