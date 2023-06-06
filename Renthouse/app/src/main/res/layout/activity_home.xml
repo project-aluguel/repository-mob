@@ -161,21 +161,21 @@
                         android:layout_height="wrap_content"
                         android:text="PROMOÇÃO!"
                         android:textColor="#f0f"
-                        android:textSize="17sp"
+                        android:textSize="15sp"
                         style="@style/BaseText"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Alugue juntos e tenha um desconto de"
                         android:textColor="#000"
-                        android:textSize="14sp"
+                        android:textSize="12sp"
                         style="@style/BaseText"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="15%"
                         android:textColor="#f0f"
-                        android:textSize="17sp"
+                        android:textSize="15sp"
                         style="@style/BaseText"/>
                 </LinearLayout>
             </LinearLayout>
@@ -206,7 +206,14 @@
                     android:id="@+id/fragment_container_home"
                     android:layout_marginRight="30dp"
                     android:orientation="horizontal">
-
+                        <fragment
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:layout="@layout/fragment_poster"/>
+                    <fragment
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:layout="@layout/fragment_poster"/>
 
                 </LinearLayout>
             </HorizontalScrollView>
