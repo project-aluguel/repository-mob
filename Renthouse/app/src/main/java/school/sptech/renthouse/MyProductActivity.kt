@@ -1,7 +1,9 @@
 package school.sptech.renthouse
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import retrofit2.Call
@@ -9,6 +11,11 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MyProductActivity : AppCompatActivity() {
+
+    fun goToMenuPopup(view: View?) {
+        val intent = Intent(this, ModalHomeActivity::class.java)
+        startActivity(intent)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_product)

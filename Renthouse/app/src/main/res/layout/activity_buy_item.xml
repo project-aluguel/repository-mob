@@ -11,7 +11,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@mipmap/fundo_roxo">
+        android:background="@mipmap/fundo_roxo"
+        tools:ignore="MissingConstraints">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,9 +47,15 @@
                     />
             </LinearLayout>
         </LinearLayout>
-        <!--
-                Aqui você coloca o fragment
-                            -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_item_rented"
+            android:orientation="horizontal">
+
+
+        </LinearLayout>
 
     </LinearLayout>
             </ScrollView>

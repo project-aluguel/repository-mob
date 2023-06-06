@@ -5,6 +5,11 @@ object SessaoItem {
     lateinit var foto : String
     lateinit var descricao : String
     lateinit var detalhesUso : String
+    lateinit var idItem: String
+
+    fun initIdItem(idItem:String){
+        this.idItem = idItem
+    }
 
     fun initTitulo(titulo: String){
         this.titulo = titulo;

@@ -17,10 +17,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [PosterFragment.newInstance] factory method to
+ * Use the [ItemRented.newInstance] factory method to
  * create an instance of this fragment.
  */
-class PosterFragment : Fragment() {
+class ItemRented : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -37,35 +37,24 @@ class PosterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-
-
-        return inflater.inflate(R.layout.fragment_poster, container, false)
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_item_rented, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val item = arguments?.getSerializable("item") as CatalogoItem
-        val nomeProduto = view.findViewById<TextView>(R.id.nome)
-        val valorProduto = view.findViewById<TextView>(R.id.valor)
-        val imgView = view.findViewById<ImageView>(R.id.imagem_poster)
+        val item = arguments?.getSerializable("itemRent") as ItemRent
+        val nomeProduto = view.findViewById<TextView>(R.id.nome_item)
+        val valorProduto = view.findViewById<TextView>(R.id.valor_item)
+        val imgView = view.findViewById<ImageView>(R.id.img_produto)
+        val descricao = view.findViewById<TextView>(R.id.item_descricao)
         val imgUrl = item.imagemUrl
         println("imagem vem assim, " + imgUrl)
         Glide.with(this).load(imgUrl).into(imgView);
         nomeProduto?.text = item.nome
         valorProduto?.text = "R$${item.valorItem} Dia"
+        descricao?.text = item.descricao
 
-
-        view.setOnClickListener {
-            // Criar um Intent para iniciar a nova atividade
-            val intent = Intent(activity, activity_buyItem::class.java)
-
-            // Passar o ID do item como um extra para a nova atividade
-            println("esse id ------------------------, "+ item.id)
-            SessaoItem.initIdItem(item.id)
-            // Iniciar a nova atividade
-            startActivity(intent)
-        }
     }
 }
