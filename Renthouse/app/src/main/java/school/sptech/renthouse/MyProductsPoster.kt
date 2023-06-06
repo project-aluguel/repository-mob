@@ -1,5 +1,6 @@
 package school.sptech.renthouse
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -54,5 +55,18 @@ class MyProductsPoster : Fragment() {
 
         nomeProduto?.text = myProductsItem.nome
         valorProduto?.text = "R$${myProductsItem.valorItem} Dia"
+
+        view.setOnClickListener {
+            // Criar um Intent para iniciar a nova atividade
+            val intent = Intent(activity, activity_buyItem::class.java)
+
+            // Passar o ID do item como um extra para a nova atividade
+            println("esse id ------------------------, "+ myProductsItem.idItem)
+            SessaoItem.initIdItem(myProductsItem.idItem)
+            // Iniciar a nova atividade
+            startActivity(intent)
+        }
     }
+
+
 }

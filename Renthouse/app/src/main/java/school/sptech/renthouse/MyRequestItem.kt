@@ -1,5 +1,6 @@
 package school.sptech.renthouse
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -53,5 +54,16 @@ class MyRequestItem : Fragment() {
         Glide.with(this).load(imgUrl).into(imgView);
         nomeProduto?.text = myRequestItens.nomeItem
         valorProduto?.text = "R$${myRequestItens.valorEmprestimo} Dia"
+
+        view.setOnClickListener {
+            // Criar um Intent para iniciar a nova atividade
+            val intent = Intent(activity, activity_buyItem::class.java)
+
+            // Passar o ID do item como um extra para a nova atividade
+            println("esse id ------------------------, "+ myRequestItens.idItem)
+            SessaoItem.initIdItem(myRequestItens.idItem)
+            // Iniciar a nova atividade
+            startActivity(intent)
+        }
     }
 }
