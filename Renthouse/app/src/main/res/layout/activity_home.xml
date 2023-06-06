@@ -206,15 +206,7 @@
                     android:id="@+id/fragment_container_home"
                     android:layout_marginRight="30dp"
                     android:orientation="horizontal">
-                        <fragment
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            tools:layout="@layout/fragment_poster"/>
-                    <fragment
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:layout="@layout/fragment_poster"/>
-
+                        
                 </LinearLayout>
             </HorizontalScrollView>
 
