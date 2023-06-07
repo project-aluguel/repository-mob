@@ -1,10 +1,15 @@
 package school.sptech.renthouse
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,23 +42,54 @@ class LockPosterFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_lock_poster, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment LockPosterFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            LockPosterFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val myProductsItem = arguments?.getSerializable("myProducts") as ItemUserProduct
+        val statusLock = myProductsItem.status
+        println("---------------, " + statusLock)
+        val nomeProduto = view.findViewById<TextView>(R.id.nome)
+        val valorProduto = view.findViewById<TextView>(R.id.valor)
+        val imgView = view.findViewById<ImageView>(R.id.imagem_poster)
+        val imgUrl = myProductsItem.imagemUrl
+        // Picasso.with(context).load(imgUrl).into(imgView)
+        Glide.with(this).load(imgUrl).into(imgView);
+
+
+        val imgLock = view.findViewById<ImageView>(R.id.lock)
+
+        val opcao = 2
+
+        when (statusLock) {
+            "disponivel" -> {
+                println("Opção 1 selecionada")
+                val greenLock = ContextCompat.getDrawable(requireContext(), R.drawable.green_lock)
+                Glide.with(this).load(greenLock).into(imgLock);
+
             }
+            "ativo" -> {
+                println("Opção 2 selecionada")
+            }
+            else -> {
+                println("Opção inválida")
+                // Faça algo aqui para opções inválidas
+            }
+        }
+
+        nomeProduto?.text = myProductsItem.nome
+        valorProduto?.text = "R$${myProductsItem.valorItem} Dia"
+
+        view.setOnClickListener {
+            // Criar um Intent para iniciar a nova atividade
+            val intent = Intent(activity, activity_buyItem::class.java)
+
+            // Passar o ID do item como um extra para a nova atividade
+            println("esse id ------------------------, "+ myProductsItem.idItem)
+            SessaoItem.initIdItem(myProductsItem.idItem)
+            // Iniciar a nova atividade
+            startActivity(intent)
+        }
     }
+
 }

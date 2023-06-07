@@ -25,7 +25,7 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="25dp"
-                android:id="@+id/imagem_poster"
+                android:id="@+id/lock"
                 android:src="@mipmap/red_lock"/>
 
             <ImageView
