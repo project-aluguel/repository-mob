@@ -181,7 +181,7 @@
                     android:layout_marginEnd="30dp"
                     android:orientation="horizontal">
 
-                    <include android:id="@+id/poster" layout="@layout/fragment_poster"/>
+<!--                    <include android:id="@+id/poster" layout="@layout/fragment_poster"/>-->
 
                 </LinearLayout>
             </HorizontalScrollView>

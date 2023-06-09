@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.EditorInfo
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import retrofit2.Call
@@ -58,6 +59,19 @@ class my_request : AppCompatActivity() {
 
         })
 
+//        val searchEditText = findViewById<EditText>(R.id.editSearchMyProducts)
+//
+//        searchEditText.setOnEditorActionListener { _, actionId, _ ->
+//            if (actionId == EditorInfo.IME_ACTION_DONE) {
+//
+//                val valor = searchEditText.text.toString()
+//
+//                true
+//            } else {
+//                false
+//            }
+//        }
+
         findViewById<TextView>(R.id.editSearchMyProducts).setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 apiItens.getSearchItemByUser(idUser, findViewById<TextView>(R.id.editSearchMyProducts).text.toString()).enqueue(
@@ -75,7 +89,7 @@ class my_request : AppCompatActivity() {
 
                                 if (myItems != null) {
                                     for (item in myItems) {
-                                        val myFragment = PosterFragment()
+                                        val myFragment = MyRequestItem()
                                         val argumentos = Bundle()
                                         argumentos.putSerializable("myItem", item.toString())
                                         myFragment.arguments = argumentos

@@ -45,23 +45,23 @@ class MyRequestItem : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val myRequestItens = arguments?.getSerializable("myItem") as ItemRequestedUser
+        val myRequestItens = arguments?.getSerializable("myItem") as PosterModel
         val nomeProduto = view.findViewById<TextView>(R.id.nome)
         val valorProduto = view.findViewById<TextView>(R.id.valor)
         val imgView = view.findViewById<ImageView>(R.id.imagem_poster)
         val imgUrl = myRequestItens.imagemUrl
         //Picasso.with(context).load(imgUrl).into(imgView)
         Glide.with(this).load(imgUrl).into(imgView);
-        nomeProduto?.text = myRequestItens.nomeItem
-        valorProduto?.text = "R$${myRequestItens.valorEmprestimo} Dia"
+        nomeProduto?.text = myRequestItens.nome
+        valorProduto?.text = "R$${myRequestItens.valorItem} Dia"
 
         view.setOnClickListener {
             // Criar um Intent para iniciar a nova atividade
             val intent = Intent(activity, activity_buyItem::class.java)
 
             // Passar o ID do item como um extra para a nova atividade
-            println("esse id ------------------------, "+ myRequestItens.idItem)
-            SessaoItem.initIdItem(myRequestItens.idItem)
+            println("esse id ------------------------, "+ myRequestItens.id)
+            SessaoItem.initIdItem(myRequestItens.id)
             // Iniciar a nova atividade
             startActivity(intent)
         }
