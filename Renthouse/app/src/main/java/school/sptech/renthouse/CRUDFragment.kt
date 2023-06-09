@@ -3,6 +3,7 @@ package school.sptech.renthouse
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -34,28 +35,55 @@ class CRUDFragment : Fragment() {
         view.findViewById<EditText>(R.id.nameEditText).setText(usuario.nomeCompleto)
         view.findViewById<EditText>(R.id.emailEditText)
         view.findViewById<EditText>(R.id.addressEditText)
+
+        Apis.getApiUsuarios().getUsuario(SessaoUsuario.usuario.id).enqueue(
+            object : Callback<Usuario> {
+                override fun onResponse(
+                    call: Call<Usuario>,
+                    response: Response<Usuario>
+                ) {
+                    if (response.isSuccessful) {
+
+                        // Nome completo
+                        val name = response.body()?.nomeCompleto ?: "seu nome"
+                        val editableName = Editable.Factory.getInstance().newEditable(name)
+                        view?.findViewById<EditText>(R.id.nameEditText)?.text = editableName
+
+                        /*CRIAR OS OUTROS CAMPOS AQUI*/
+
+                    } else {
+                        // Trate o caso em que a resposta não é bem-sucedida
+                    }
+                }
+
+                override fun onFailure(call: Call<Usuario>, t: Throwable) {
+                    println(" -----------------------------------------" + t.message)
+                    t.printStackTrace()
+                }
+            }
+        )
     }
 
     private fun showToast(message: String) {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
-    private fun saveChanges(idUsuario:String, context: Context,CRUDFragment : Intent, response: Response<String>) {
+    private fun saveChanges(
+        idUsuario: String,
+        context: Context,
+        CRUDFragment: Intent,
+        response: Response<String>
+    ) {
         val view = view ?: return
 
-        val nameEditText = view.findViewById<EditText>(R.id.nameEditText)
-        val emailEditText = view.findViewById<EditText>(R.id.emailEditText)
-        val addressEditText = view.findViewById<EditText>(R.id.addressEditText)
-        val passwordEditText = view.findViewById<EditText>(R.id.passwordEditText)
+        val nomeCompleto = view.findViewById<EditText>(R.id.nameEditText).text.toString()
+        val email = view.findViewById<EditText>(R.id.emailEditText).text.toString()
+        val endereco = view.findViewById<EditText>(R.id.addressEditText).text.toString()
+        val senha = view.findViewById<EditText>(R.id.passwordEditText).text.toString()
 
-        val nomeCompleto = nameEditText.text.toString()
-        val email = emailEditText.text.toString()
-        val endereco = addressEditText.text.toString()
-        val senha = passwordEditText.text.toString()
-
-        val apiUser = Apis.getApiUsuarios()
-        val atualizaUsuarioRequest = AtualizaUsuarioRequest(nomeCompleto, email, endereco , senha)
-        val atualizaUserPut = apiUser.atualizarUsuario(idUsuario,atualizaUsuarioRequest)
+        val atualizaUsuarioRequest = AtualizaUsuarioRequest(nomeCompleto, email, senha)
+        val atualizaUserPut =
+            Apis.getApiUsuarios().atualizarUsuario(idUsuario, atualizaUsuarioRequest)
 
         GlobalScope.launch(Dispatchers.Main) {
             try {
@@ -73,7 +101,10 @@ class CRUDFragment : Fragment() {
 
         atualizaUserPut.enqueue(
             object : Callback<AtualizaUsuario> {
-                override fun onResponse(call: Call<AtualizaUsuario>, response: Response<AtualizaUsuario>) {
+                override fun onResponse(
+                    call: Call<AtualizaUsuario>,
+                    response: Response<AtualizaUsuario>
+                ) {
                     if (response.isSuccessful) {
                         val activityWallet = Intent(context, activity_wallet::class.java)
                         val idUser = response.body().toString()
@@ -97,4 +128,7 @@ class CRUDFragment : Fragment() {
         showToast(message)
     }
 
+    override fun onResume() {
+        super.onResume()
     }
+}
