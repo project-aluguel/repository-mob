@@ -4,7 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.widget.ImageView
+import android.widget.TextView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -55,6 +57,45 @@ class my_request : AppCompatActivity() {
             }
 
         })
+
+        findViewById<TextView>(R.id.editSearchMyProducts).setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                apiItens.getSearchItemByUser(idUser, findViewById<TextView>(R.id.editSearchMyProducts).text.toString()).enqueue(
+                    object :Callback<List<PosterModel>>{
+                        override fun onResponse(
+                            call: Call<List<PosterModel>>,
+                            response: Response<List<PosterModel>>
+                        ) {
+                            if (response.isSuccessful && response.body()!=null && response.body()?.isNotEmpty()!!) {
+
+                                val myItems = response.body()
+
+                                val fragmentManager = supportFragmentManager
+                                val fragmentTransaction = fragmentManager.beginTransaction()
+
+                                if (myItems != null) {
+                                    for (item in myItems) {
+                                        val myFragment = PosterFragment()
+                                        val argumentos = Bundle()
+                                        argumentos.putSerializable("myItem", item.toString())
+                                        myFragment.arguments = argumentos
+                                        fragmentTransaction.add(R.id.fragment_container_my_request, myFragment)
+                                    }
+                                }
+
+                                fragmentTransaction.commit()
+                            }
+                        }
+
+                        override fun onFailure(call: Call<List<PosterModel>>, t: Throwable) {
+                            println("---------- foge que deu ruim, " + t.message)
+                        }
+
+                    })
+                return@setOnEditorActionListener true
+            }
+            return@setOnEditorActionListener false
+        }
 
     }
 
