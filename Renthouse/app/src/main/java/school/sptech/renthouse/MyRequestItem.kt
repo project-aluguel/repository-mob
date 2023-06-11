@@ -38,13 +38,14 @@ class MyRequestItem : Fragment() {
 
         view.setOnClickListener {
             // Criar um Intent para iniciar a nova atividade
-            val intent = Intent(activity, activity_buyItem::class.java)
-
+            val intent = Intent(activity, MetricsActivity::class.java)
+            val argumentos = Bundle()
+            argumentos.putString("idItemRent", myRequestItens.idItem)
             // Passar o ID do item como um extra para a nova atividade
             println("esse id ------------------------, "+ myRequestItens.idItem)
             SessaoItem.initIdItem(myRequestItens.idItem)
             // Iniciar a nova atividade
-            startActivity(intent)
+            startActivity(intent, argumentos)
         }
     }
 }

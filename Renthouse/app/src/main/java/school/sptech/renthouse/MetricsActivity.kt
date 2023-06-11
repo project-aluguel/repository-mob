@@ -2,6 +2,10 @@ package school.sptech.renthouse
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
+import com.bumptech.glide.Glide
+import org.w3c.dom.Text
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -10,11 +14,12 @@ class MetricsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_metrics)
+        val extras = intent.extras
 
-        val idUser = SessaoUsuario.usuario.id
+        val myRequestItens = extras?.getString("idItemRent")
 
-        val apiItens = Apis.getApiItens();
-        val getMetricsItem = apiItens.getMetricsItem(idUser)
+        val apiItens = Apis.getApiItens()
+        val getMetricsItem = apiItens.getMetricsItem(myRequestItens ?: "")
 
         getMetricsItem.enqueue( object : Callback<ItemRent> {
             override fun onResponse(
@@ -23,22 +28,16 @@ class MetricsActivity : AppCompatActivity() {
             ) {
                 if (response.isSuccessful && response.body()!=null) {
 
-                    val myItems = response.body()
+                    val item = response.body()
 
-                    val fragmentManager = supportFragmentManager
-                    val fragmentTransaction = fragmentManager.beginTransaction()
+                    if (item != null) {
+                        val imagePosterMetric = findViewById<ImageView>(R.id.imagePosterMetric)
+                        Glide.with(applicationContext).load(item.imagemUrl).into(imagePosterMetric)
 
-//                    if (myItems != null) {
-//                        for (item in myItems) {
-//                            val myFragment = MyRequestItem()
-//                            val argumentos = Bundle()
-//                            argumentos.putSerializable("myItem", item)
-//                            myFragment.arguments = argumentos
-//                            fragmentTransaction.add(R.id.fragment_container_my_request, myFragment)
-//                        }
-//                    }
+                        findViewById<TextView>(R.id.nameItemMetric).text = item.nome
+                    }
 
-                    fragmentTransaction.commit()
+
                 }
             }
 

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MetricsActivity">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,163 +16,177 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#88111111"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                >
+                android:layout_height="60dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:gravity="center_vertical"
                     android:layout_weight="1"
-                    >
+                    android:gravity="center_vertical">
 
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@mipmap/arrow_left"
+                        android:layout_marginLeft="20dp"
                         android:contentDescription="Background image"
-                        android:layout_marginLeft="20dp"/>
+                        android:src="@mipmap/arrow_left" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text='@string/txt_back'
                         android:onClick="goToHome"
-                        android:textColor="@color/white"
-                        />
+                        android:text='@string/txt_back'
+                        android:textColor="@color/white" />
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="390dp"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"
-                    >
+                    android:layout_height="400dp">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="350dp"
 
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        >
+                        android:orientation="vertical">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="300dp"
 
                             android:orientation="vertical">
+
                             <ImageView
+                                android:id="@+id/imagePosterMetric"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@mipmap/produto_spiderman"/>
+                                android:src="@mipmap/produto_spiderman" />
 
 
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
                             android:orientation="vertical">
+
                             <LinearLayout
                                 android:layout_width="10dp"
-                                android:layout_height="5dp"
-                                >
+                                android:layout_height="5dp">
 
                             </LinearLayout>
-
-
 
 
                         </LinearLayout>
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:orientation="vertical">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="200dp"
-                            android:gravity="center"
-                            >
+                            android:gravity="center">
+
                             <TextView
-                                android:layout_marginLeft="15dp"
+                                android:id="@+id/nameItemMetric"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
                                 android:text="Spider Man 4 Sony PS4 Físico"
                                 android:textColor="@color/white"
                                 android:textSize="30dp"
-                                android:textStyle="bold"/>
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
-                            android:layout_marginLeft="5dp"
-                            >
+                            android:layout_marginLeft="5dp">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Avaliação do anunciante"
                                 android:textColor="@color/white"
-                                android:textStyle="bold"
-                                android:textSize="17sp"/>
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="125dp"
                             android:layout_height="45dp"
                             android:layout_marginLeft="5dp"
 
                             >
+
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@mipmap/star"
-                                android:layout_weight="1"/><ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:src="@mipmap/star"
-                            android:layout_weight="1"/><ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:src="@mipmap/star"
-                            android:layout_weight="1"/><ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:src="@mipmap/star"
-                            android:layout_weight="1"/><ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:src="@mipmap/star"
-                            android:layout_weight="1"/>
+                                android:layout_weight="1"
+                                android:src="@mipmap/star" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:src="@mipmap/star" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:src="@mipmap/star" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:src="@mipmap/star" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:src="@mipmap/star" />
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
                             android:gravity="center">
+
                             <Button
+                                style="@style/BaseButton"
                                 android:layout_width="180dp"
                                 android:layout_height="80dp"
-                                style="@style/BaseButton"
+                                android:text="Alugar"
                                 android:textColor="@color/white"
-                                android:textStyle="bold"
-                                android:text="Alugar"></Button>
+                                android:textStyle="bold"></Button>
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
 
 
-
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="390dp"
@@ -186,64 +201,72 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Média de dias:  05 dias"
                                 style="@style/TitleMetrics"
-                                /><TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Quantidade média de dias o produto foi alugado  dividido pela quantidade de alugueis diferentes do mesmo."
+                                android:text="Média de dias:  05 dias" />
+
+                            <TextView
+                                style="@style/TextMetrics"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:maxLines="7"
                                 android:scrollbars="vertical"
-                            style="@style/TextMetrics"
+                                android:text="Quantidade média de dias o produto foi alugado  dividido pela quantidade de alugueis diferentes do mesmo." />
 
-                            /><TextView
+                            <TextView
+                                style="@style/TitleMetrics"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:maxLines="7"
+                                android:scrollbars="vertical"
                                 android:text="Vizualizações do anúncio: 22"
-                                android:maxLines="7"
-                                android:scrollbars="vertical"
-                            style="@style/TitleMetrics"
 
-                            /><TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Quantidade de vezes que o anúncio foi vizualizado por outros usuários."
-                                android:maxLines="7"
-                                android:scrollbars="vertical"
-                            style="@style/TextMetrics"
-                                /><TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Quantidade de alugueis: 7"
-                                android:maxLines="7"
-                                android:scrollbars="vertical"
-                            style="@style/TitleMetrics"
-
-                            /><TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Quantidade de vezes que o produto foi alugado por usuários."
-                                android:maxLines="7"
-                                android:scrollbars="vertical"
-                            style="@style/TextMetrics"
-                                /><TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Aproveitamento do anúncio: 12%"
-                                android:maxLines="7"
-                                android:scrollbars="vertical"
-                            style="@style/TitleMetrics"
-
-                            /><TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Aproveitamento de alugueis em relação a vizualizações do seu produto."
-                                android:maxLines="7"
-                                android:scrollbars="vertical"
-                            style="@style/TextMetrics"
                                 />
+
+                            <TextView
+                                style="@style/TextMetrics"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="7"
+                                android:scrollbars="vertical"
+                                android:text="Quantidade de vezes que o anúncio foi vizualizado por outros usuários." />
+
+                            <TextView
+                                style="@style/TitleMetrics"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="7"
+                                android:scrollbars="vertical"
+                                android:text="Quantidade de alugueis: 7"
+
+                                />
+
+                            <TextView
+                                style="@style/TextMetrics"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="7"
+                                android:scrollbars="vertical"
+                                android:text="Quantidade de vezes que o produto foi alugado por usuários." />
+
+                            <TextView
+                                style="@style/TitleMetrics"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="7"
+                                android:scrollbars="vertical"
+                                android:text="Aproveitamento do anúncio: 12%"
+
+                                />
+
+                            <TextView
+                                style="@style/TextMetrics"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="7"
+                                android:scrollbars="vertical"
+                                android:text="Aproveitamento de alugueis em relação a vizualizações do seu produto." />
 
 
                         </LinearLayout>
@@ -255,18 +278,13 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:orientation="horizontal"
-                        android:gravity="center">
-
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
 
                     </LinearLayout>
 
                 </LinearLayout>
-
-
-
-
 
 
             </LinearLayout>
