@@ -204,7 +204,10 @@
                         style="@style/BaseButton"
                         android:textColor="@color/white"
                         android:textStyle="bold"
-                        android:text="Alugar"></Button>
+                        android:text="Alugar"
+                        android:onClick="goToRentItem">
+
+                    </Button>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

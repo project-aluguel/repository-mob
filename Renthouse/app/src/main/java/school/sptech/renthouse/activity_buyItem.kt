@@ -28,6 +28,8 @@ class activity_buyItem : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val itemBuy = response.body()
 
+                    SessaoItem.initIdProprietario(response.body()?.idProprietario!!)
+
                     val fragmentManager = supportFragmentManager
                     val fragmentTransaction = fragmentManager.beginTransaction()
 
@@ -53,6 +55,10 @@ class activity_buyItem : AppCompatActivity() {
 
     fun goToHome(view: View?) {
         val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
+    }
+    fun goToRentItem(view: View?) {
+        val intent = Intent(this, NegociationStepOneActivity::class.java)
         startActivity(intent)
     }
 
