@@ -8,6 +8,7 @@ import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -72,13 +73,16 @@ class my_request : AppCompatActivity() {
 //            }
 //        }
 
-        findViewById<TextView>(R.id.editSearchMyProducts).setOnEditorActionListener { _, actionId, _ ->
+        val idUser2 = SessaoUsuario.usuario.id
+
+
+        findViewById<EditText>(R.id.editSearchMyProducts).setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
-                apiItens.getSearchItemByUser(idUser, findViewById<TextView>(R.id.editSearchMyProducts).text.toString()).enqueue(
-                    object :Callback<List<PosterModel>>{
+                apiItens.getSearchItemByUser(idUser2, findViewById<EditText>(R.id.editSearchMyProducts).text.toString()).enqueue(
+                    object :Callback<List<ItemRequestedUser>>{
                         override fun onResponse(
-                            call: Call<List<PosterModel>>,
-                            response: Response<List<PosterModel>>
+                            call: Call<List<ItemRequestedUser>>,
+                            response: Response<List<ItemRequestedUser>>
                         ) {
                             if (response.isSuccessful && response.body()!=null && response.body()?.isNotEmpty()!!) {
 
@@ -91,17 +95,19 @@ class my_request : AppCompatActivity() {
                                     for (item in myItems) {
                                         val myFragment = MyRequestItem()
                                         val argumentos = Bundle()
-                                        argumentos.putSerializable("myItem", item.toString())
+                                        argumentos.putSerializable("myItem", item)
                                         myFragment.arguments = argumentos
                                         fragmentTransaction.add(R.id.fragment_container_my_request, myFragment)
                                     }
                                 }
 
                                 fragmentTransaction.commit()
+                            } else {
+                                Toast.makeText(applicationContext, "Nenhum resultado encontrado", Toast.LENGTH_SHORT, ).show()
                             }
                         }
 
-                        override fun onFailure(call: Call<List<PosterModel>>, t: Throwable) {
+                        override fun onFailure(call: Call<List<ItemRequestedUser>>, t: Throwable) {
                             println("---------- foge que deu ruim, " + t.message)
                         }
 
