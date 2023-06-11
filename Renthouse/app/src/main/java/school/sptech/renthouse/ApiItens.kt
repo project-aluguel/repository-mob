@@ -25,6 +25,14 @@ interface ApiItens {
     @GET("/itens/catalogo/item/{idItem}")
     fun getItemRent(@Path("idItem") id: String): Call<ItemRent>
 
+    @GET("/itens/catalogo/{idUsuario}/nome/{nome}")
+    fun getSearchItemByUser(
+        @Path("idUsuario") idUser: String,
+        @Path("nome") nameProduct: String
+    ): Call<List<ItemRequestedUser>>
+
+    @GET("/itens/metricas/{idItem}")
+    fun getMetricsItem(@Path("idItem") idItem: String): Call<ItemRent>
 
 
     @GET("/itens/catalogo/{idUsuario}/nome/{nome}")

@@ -37,7 +37,9 @@ class activity_buyItem : AppCompatActivity() {
                             val argumentos = Bundle()
                             argumentos.putSerializable("itemRent", itemBuy)
                             myFragment.arguments = argumentos
-                            fragmentTransaction.add(R.id.fragment_item_rented, myFragment)
+
+                    //Verifcar a existencia desse id na develop ou branch do tipo
+//                            fragmentTransaction.add(R.id.fragment_item_rented, myFragment)
 
                     fragmentTransaction.commit()
                 }
