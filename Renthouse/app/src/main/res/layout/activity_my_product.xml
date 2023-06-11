@@ -166,22 +166,23 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="20dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/fragment_container_my_product"
-                    android:layout_marginRight="30dp"
-                    android:orientation="horizontal">
+                android:id="@+id/fragment_container_lock_poster"
+                android:layout_marginRight="30dp"
+                android:orientation="horizontal">
 
-
-                </LinearLayout>
-            </HorizontalScrollView>
+            </LinearLayout>
+            
+        </HorizontalScrollView>
         </LinearLayout>
     </ScrollView>
 

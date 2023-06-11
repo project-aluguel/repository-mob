@@ -37,11 +37,11 @@ class MyProductActivity : AppCompatActivity() {
 
                     if (myProducts != null) {
                         for (item in myProducts) {
-                            val myFragment = MyProductsPoster()
+                            val myFragment = LockPosterFragment()
                             val argumentos = Bundle()
                             argumentos.putSerializable("myProducts", item)
                             myFragment.arguments = argumentos
-                            fragmentTransaction.add(R.id.fragment_container_my_product, myFragment)
+                            fragmentTransaction.add(R.id.fragment_container_lock_poster, myFragment)
                         }
                     }
 
