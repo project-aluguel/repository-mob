@@ -49,7 +49,7 @@ class LockPosterFragment : Fragment() {
         val myProductsItem = arguments?.getSerializable("myProducts") as ItemUserProduct
         val statusLock = myProductsItem.status
         println("---------------, " + statusLock)
-        val nomeProduto = view.findViewById<TextView>(R.id.nome)
+        val nomeProduto = view.findViewById<TextView>(R.id.nome_my_product)
         val valorProduto = view.findViewById<TextView>(R.id.valor)
         val imgView = view.findViewById<ImageView>(R.id.imagem_poster)
         val imgUrl = myProductsItem.imagemUrl
@@ -68,7 +68,7 @@ class LockPosterFragment : Fragment() {
                 Glide.with(this).load(greenLock).into(imgLock);
 
             }
-            "ativo" -> {
+            "alugado" -> {
                 println("Opção 2 selecionada")
             }
             else -> {

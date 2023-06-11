@@ -49,6 +49,7 @@
                     android:textSize="18sp"
                     android:textColor="#000"
                     android:gravity="start"
+                    android:id="@+id/nome_my_product"
                     android:textFontWeight="2"
                     style="@style/BaseText"/>
 
