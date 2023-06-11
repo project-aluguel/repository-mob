@@ -70,7 +70,9 @@ class NegociationStepOneActivity : AppCompatActivity() {
 
         negociation.enqueue(object : Callback<String> {
             override fun onResponse(call: Call<String>, response: Response<String>) {
-                println("Funcionouuuuuuuuu ")
+                println("funcionooooou");
+                val intent = Intent(this@NegociationStepOneActivity, my_request::class.java)
+                startActivity(intent)
 
             }
 
