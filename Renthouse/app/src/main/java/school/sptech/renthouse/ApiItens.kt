@@ -27,4 +27,8 @@ interface ApiItens {
 
 
 
+    @GET("/itens/catalogo/{idUsuario}/nome/{nome}")
+    fun myItensUser(@Path("idUsuario") id: String, @Path("nome") nome: String): Call<List<ItemUserProduct>>
+
+
 }
