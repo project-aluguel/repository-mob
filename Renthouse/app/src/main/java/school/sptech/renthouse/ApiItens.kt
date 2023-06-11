@@ -13,6 +13,8 @@ interface ApiItens {
 
     @POST("/itens")
     fun postItens(@Body body: RegisterItemRequest): Call<String>
+    @POST("/negociacoes")
+    fun negociacaoItens(@Body body: NegociationRequest): Call<String>
 
     @GET("/itens/usuario/{idUsuario}")
     fun myItensUser(@Path("idUsuario") id: String): Call<List<ItemUserProduct>>
@@ -31,5 +33,6 @@ interface ApiItens {
 
     @GET("/itens/metricas/{idItem}")
     fun getMetricsItem(@Path("idItem") idItem: String): Call<ItemRent>
+
 
 }

@@ -7,4 +7,5 @@ data class ItemUserProduct(val idItem:String, val nome:String,val manualUso:Stri
                            val dataFim: String, val descricao:String, val imagemUrl:String, val categoria:String,
                            val valorItem: Double, val valorGarantia:Double,
                            val status:String, val entregaFrete:Boolean, val entregaPessoal:Boolean):java.io.Serializable {
+
 }

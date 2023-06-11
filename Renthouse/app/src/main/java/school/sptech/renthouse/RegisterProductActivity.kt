@@ -20,11 +20,6 @@ class RegisterProductActivity : AppCompatActivity() {
        val etImagem = findViewById<EditText>(R.id.url_image)
 
 
-       SessaoItem.initTitulo(etTitulo.toString());
-       SessaoItem.initDescricao(etDescricao.toString());
-       SessaoItem.initFoto("foto_qualquer");
-       SessaoItem.initDetalhesUso(etDetalhes.toString());
-
        val intent = Intent(this, RegisterProductStepTwoActivity::class.java)
        startActivity(intent)
 

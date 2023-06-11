@@ -90,7 +90,7 @@ if(senha_cadastro == confirma_senha)
                         override fun onResponse(call: Call<String>, response: Response<String>) {
                             println("CRIOU A CARTEIRAA E SEU ID É ESSE, " + response.body().toString())
                             SessaoUsuario.initIdCarteira(response.body().toString())
-                            cadastraViaCep(cep)
+
                         }
 
                         override fun onFailure(call: Call<String>, t: Throwable) {
@@ -125,28 +125,5 @@ if(senha_cadastro == confirma_senha)
 
     }
 
-    fun cadastraViaCep(cep : String){
-
-        val getViaCep = Apis.getApiViaCep()
-        println("Esse é o cep -----, " + cep)
-        val getDadosResidencia = getViaCep.getDadosResidencia(cep)
-
-        getDadosResidencia.enqueue(object : Callback<EnderecoViaCep>{
-            override fun onResponse(
-                call: Call<EnderecoViaCep>,
-                response: Response<EnderecoViaCep>
-            ) {
-                val dadosEnderecoUsuario = response.body()
-                println("deu boooom --------------------, " + dadosEnderecoUsuario)
-            }
-
-            override fun onFailure(call: Call<EnderecoViaCep>, t: Throwable) {
-                println("-----------------------------, " + t.message)
-            }
-
-
-        })
-
-    }
 
 }

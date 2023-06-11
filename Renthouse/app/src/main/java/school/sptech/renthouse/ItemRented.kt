@@ -25,11 +25,13 @@ class ItemRented : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
@@ -41,10 +43,14 @@ class ItemRented : Fragment() {
         return inflater.inflate(R.layout.fragment_item_rented, container, false)
     }
 
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val item = arguments?.getSerializable("itemRent") as ItemRent
+        val intent = Intent(context, NegociationStepOneActivity::class.java)
+
         val nomeProduto = view.findViewById<TextView>(R.id.nome_item)
         val valorProduto = view.findViewById<TextView>(R.id.valor_item)
         val imgView = view.findViewById<ImageView>(R.id.img_produto)
@@ -55,6 +61,14 @@ class ItemRented : Fragment() {
         nomeProduto?.text = item.nome
         valorProduto?.text = "R$${item.valorItem} Dia"
         descricao?.text = item.descricao
+
+        SessaoItem.initValorItem(item.valorItem)
+        SessaoItem.initTitulo(item.nome)
+        SessaoItem.initFoto(item.imagemUrl)
+        SessaoItem.initDescricao(item.descricao)
+
+
+
 
     }
 }
