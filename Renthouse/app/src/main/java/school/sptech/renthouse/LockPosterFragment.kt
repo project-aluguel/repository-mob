@@ -82,7 +82,7 @@ class LockPosterFragment : Fragment() {
 
         view.setOnClickListener {
             // Criar um Intent para iniciar a nova atividade
-            val intent = Intent(activity, activity_buyItem::class.java)
+            val intent = Intent(activity, MetricsActivity::class.java)
 
             // Passar o ID do item como um extra para a nova atividade
             println("esse id ------------------------, "+ myProductsItem.idItem)

@@ -16,6 +16,9 @@ interface ApiItens {
     @POST("/negociacoes")
     fun negociacaoItens(@Body body: NegociationRequest): Call<String>
 
+    @GET("/itens/metricas/{idItem}")
+    fun getMetricsItem(@Path("idItem") idItem: String): Call<ItemRent>
+
     @GET("/itens/usuario/{idUsuario}")
     fun myItensUser(@Path("idUsuario") id: String): Call<List<ItemUserProduct>>
 

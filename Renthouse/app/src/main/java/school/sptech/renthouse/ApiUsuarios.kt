@@ -19,5 +19,7 @@ interface ApiUsuarios {
 
     @POST("/enderecos")
     fun salvarEndereco(@Body body: EnderecoRequest): Call<Endereco>
+    @GET("/usuarios/{idUsuario}") fun getUsuario(@Path("idUsuario") idUsuario: String): Call<Usuario>
+
 
 }
