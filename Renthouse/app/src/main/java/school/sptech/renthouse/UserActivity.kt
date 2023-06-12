@@ -40,8 +40,8 @@ class UserActivity : AppCompatActivity() {
         val intent = Intent(this, MyProductActivity::class.java)
         startActivity(intent)
 
-    } fun goToMyRequest(view: View?) {
-        val intent = Intent(this, MyProductActivity::class.java)
+    } fun goToMyRequests(view: View?) {
+        val intent = Intent(this, my_request::class.java)
         startActivity(intent)
     }
     fun goToEditarPerfil(view: View?) {

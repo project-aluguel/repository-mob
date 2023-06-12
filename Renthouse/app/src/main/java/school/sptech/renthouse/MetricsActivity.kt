@@ -23,7 +23,6 @@ class MetricsActivity : AppCompatActivity() {
                 call: Call<ItemRent>,
                 response: Response<ItemRent>
             ) {
-                if (response.isSuccessful && response.body()!=null) {
 
                     val item = response.body()
                     println("Esse é o ITEM ------------------------------------------------ , " + item?.mediaDiasAlugadosPorNegociacao.toString())
@@ -39,7 +38,7 @@ class MetricsActivity : AppCompatActivity() {
                         findViewById<TextView>(R.id.nameMetricQuant).text = item.qtdNegociacao
                         findViewById<TextView>(R.id.nameMetricApro).text = item.mediaFeedback
                     }
-                }
+
             }
             override fun onFailure(call: Call<ItemRent>, t: Throwable) {
                 println("---------- foge que deu ruim, " + t.message)
