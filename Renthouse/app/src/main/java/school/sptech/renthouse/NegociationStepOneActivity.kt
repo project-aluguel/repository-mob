@@ -53,7 +53,7 @@ class NegociationStepOneActivity : AppCompatActivity() {
         Glide.with(this).load(imgUrl).into(imgView);
     }
     fun goToPerfil(view: View?) {
-        val intent = Intent(this, UserActivity::class.java)
+        val intent = Intent(this, activity_buyItem::class.java)
         startActivity(intent)
     }
 

@@ -161,21 +161,21 @@
                         android:layout_height="wrap_content"
                         android:text="PROMOÇÃO!"
                         android:textColor="#f0f"
-                        android:textSize="17sp"
+                        android:textSize="14sp"
                         style="@style/BaseText"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Alugue juntos e tenha um desconto de"
                         android:textColor="#000"
-                        android:textSize="14sp"
+                        android:textSize="12sp"
                         style="@style/BaseText"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="15%"
                         android:textColor="#f0f"
-                        android:textSize="17sp"
+                        android:textSize="14sp"
                         style="@style/BaseText"/>
                 </LinearLayout>
             </LinearLayout>
@@ -192,7 +192,7 @@
                     style="@style/BaseText"
                     android:gravity="start"
                     android:textColor="@color/white"
-                    android:text="Baseado nas suas últimas visitas"/>
+                    android:text="Destaques"/>
             </LinearLayout>
             <HorizontalScrollView
                 android:layout_width="wrap_content"

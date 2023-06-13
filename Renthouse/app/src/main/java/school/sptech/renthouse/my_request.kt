@@ -18,7 +18,8 @@ class my_request : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_request)
-
+// Esconde a barra de ação
+        supportActionBar?.hide()
         val idUser = SessaoUsuario.usuario.id
 
         val apiItens = Apis.getApiItens();
