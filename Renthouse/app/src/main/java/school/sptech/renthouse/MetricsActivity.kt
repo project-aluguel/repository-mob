@@ -13,7 +13,10 @@ class MetricsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_metrics)
-        val idItem = SessaoItem.idItem
+        val idItem = SessaoItemMetrica.idItemMetrica
+        val imgUrl = SessaoItemMetrica.fotoMetrica;
+        val titulo = SessaoItemMetrica.tituloMetrica;
+
 
         val apiItens = Apis.getApiItens()
         val getMetricsItem = apiItens.getMetricsItem(idItem)
@@ -29,9 +32,8 @@ class MetricsActivity : AppCompatActivity() {
 
                     if (item != null) {
                         val imagePosterMetric = findViewById<ImageView>(R.id.imagePosterMetric)
-                        Glide.with(applicationContext).load(item.imagemUrl).into(imagePosterMetric)
-
-                        findViewById<TextView>(R.id.nameItemMetric).text = item.nome
+                        Glide.with(applicationContext).load(imgUrl).into(imagePosterMetric)
+                        findViewById<TextView>(R.id.nameItemMetric).text = titulo
 
                         findViewById<TextView>(R.id.nameMetricDias).text = item.mediaDiasAlugadosPorNegociacao
                         findViewById<TextView>(R.id.nameMetricVizu).text = item.qtdVisualizacao

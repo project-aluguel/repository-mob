@@ -86,7 +86,9 @@ class LockPosterFragment : Fragment() {
 
             // Passar o ID do item como um extra para a nova atividade
             println("esse id ------------------------, "+ myProductsItem.idItem)
-            SessaoItem.initIdItem(myProductsItem.idItem)
+            SessaoItemMetrica.initIdItemMetrica(myProductsItem.idItem)
+            SessaoItemMetrica.initFotoMetrica(myProductsItem.imagemUrl)
+            SessaoItemMetrica.initTituloMetrica(myProductsItem.nome)
             // Iniciar a nova atividade
             startActivity(intent)
         }
